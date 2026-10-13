@@ -762,4 +762,5 @@ const F="morning",U="2026-10-13T18:00:00+07:00";let ev=h>=18||h<5;if(F&&U&&Date.
 document.getElementById('share').onclick=async()=>{const url=location.href,text='Blog dashboard: 10 drafts awaiting review, 3 open checks.',l=document.querySelector('#share span');
 if(navigator.share){try{await navigator.share({title:'Blog Dashboard',text,url});return}catch(x){if(x.name==='AbortError')return}}
 try{await navigator.clipboard.writeText(text+' '+url);l.textContent='Copied';setTimeout(()=>l.textContent='Share',1600)}catch(x){location.href='sms:?&body='+encodeURIComponent(text+' '+url)}};</script>
+<script src="ptr.js" defer></script>
 </body></html>
