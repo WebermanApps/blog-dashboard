@@ -25,7 +25,7 @@
 .mw-hover:active { transform: scale(.98); }
 @media (prefers-reduced-motion: reduce) { .mw-hover, .mw-hover:hover { transition: none; transform: none; } }
 
-:root{--cream:#FBF8F3;--pop:#C2410C;--pop2:#B45309;--ok:#0F766E;--ink2:#1D4ED8}
+:root{--cream:#FFFFFF;--soft:#F5F5F5;--pop:#C1502E;--pop2:#D4A017;--ok:#0B6E4F;--ink2:#05668D}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--cream);color:var(--mw-foreground);font-family:var(--mw-font-body);line-height:1.55}
 .wrap{max-width:1100px;margin:0 auto;padding:20px 16px 120px}
 h1,h2,h3{font-family:var(--mw-font-heading);font-weight:700;line-height:1.1;letter-spacing:-.01em;margin:0}
@@ -36,23 +36,23 @@ header{border-bottom:1px solid var(--mw-border);padding-bottom:18px}.muted{color
 .status{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:8px 12px;border:1px solid var(--mw-border);border-radius:999px;background:#fff;font-weight:600}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--pop2)}
 .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}@media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
-.stat{background:#fff;border:1px solid var(--mw-border);border-radius:.75rem;padding:12px 14px}.stat b{font-family:var(--mw-font-heading);font-size:2rem;display:block;line-height:1}.stat b.c{color:var(--pop)}
+.stat{border-top:3px solid var(--ink2)!important;background:#fff;border:1px solid var(--mw-border);border-radius:.75rem;padding:12px 14px}.stat b{font-family:var(--mw-font-heading);font-size:2rem;display:block;line-height:1}.stat b.c{color:var(--pop)}
 .card{background:#fff;border:1px solid var(--mw-border);border-radius:.75rem;padding:16px;box-shadow:0 1px 2px rgba(10,10,10,.04)}
 ul.plain{list-style:none;padding:0;margin:0;display:grid;gap:10px}.row{display:flex;gap:10px;align-items:flex-start}
 .grid{display:grid;gap:12px;grid-template-columns:1fr}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
 .tags{display:flex;gap:6px;flex-wrap:wrap}.tag{font-size:.72rem;text-transform:uppercase;letter-spacing:var(--mw-tracking-label);font-weight:600;padding:3px 8px;border-radius:4px;background:var(--mw-secondary)}
-.tag.rewrite{color:var(--ink2)}.tag.new{color:var(--ok)}.tag.st{color:var(--pop2)}
+.tag.rewrite{color:var(--ink2)}.tag.new{color:var(--ok)}.tag.st{color:#0a0a0a;box-shadow:inset 3px 0 0 var(--pop2)}
 .note{font-size:.9rem;color:var(--mw-muted-text);margin:4px 0 10px;overflow-wrap:anywhere}
 .acts{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}details[open]{order:2;width:100%}.post:has(details[open]){grid-column:1/-1}
 .btn,.lnk{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:2px solid var(--mw-primary);background:#fff;color:var(--mw-primary);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:var(--mw-tracking-label);text-decoration:none;cursor:pointer;list-style:none}
 summary::-webkit-details-marker{display:none}.lnk{border-color:var(--mw-border)}details+.lnk{}
-.body{margin-top:12px;padding:14px;border-left:3px solid var(--pop);background:var(--cream);border-radius:0 .5rem .5rem 0;overflow-wrap:anywhere}.body h2{font-size:1.4rem;margin:18px 0 6px}.body h3{font-size:1.15rem}.body table{border-collapse:collapse;display:block;overflow-x:auto}.body td,.body th{border:1px solid var(--mw-border);padding:6px}
+.body{margin-top:12px;padding:14px;border-left:3px solid var(--pop);background:var(--soft);border-radius:0 .5rem .5rem 0;overflow-wrap:anywhere}.body h2{font-size:1.4rem;margin:18px 0 6px}.body h3{font-size:1.15rem}.body table{border-collapse:collapse;display:block;overflow-x:auto}.body td,.body th{border:1px solid var(--mw-border);padding:6px}
 .two,.three{display:grid;gap:0 24px}@media(min-width:1200px){.two{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.wrap{max-width:1320px;padding:28px 32px 120px}}
 @media(min-width:1800px){.wrap{max-width:2000px;padding:40px 56px 140px}.grid{grid-template-columns:repeat(auto-fill,minmax(440px,1fr))}body{font-size:18px}}
 .post{align-self:start}.rec{margin:0;padding:16px 16px 16px 34px}.body{max-width:72ch}footer a{min-height:44px;line-height:44px;padding:0 8px}
 .pdfs{display:flex;flex-wrap:wrap;gap:10px}
 footer{text-align:center;padding:30px 0 10px;font-size:.85rem}footer a{color:var(--mw-muted-text);text-decoration:none;display:inline-block}
-.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(251,248,243,.95);border-top:1px solid var(--mw-border);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);border-top:1px solid var(--mw-border);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center}
 </style></head><body><div class="wrap">
 <header><div class="mark">MAX WEBERMAN · AGENT DASHBOARD</div><h1>Blog Command Center</h1>
 <div class="status"><span class="dot"></span>10 drafts awaiting Max&#x27;s review. Nothing published.</div><p class="muted" style="margin:8px 0 0">Updated Oct 13, 2026</p>
