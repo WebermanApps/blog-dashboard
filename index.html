@@ -1,0 +1,754 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="robots" content="noindex,nofollow">
+<title>Blog Dashboard | Max Weberman</title><link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Khand:wght@600;700&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+<style>/* Max Weberman brand tokens, extracted from maxweberman.com (2026-10-10) */
+:root {
+  --mw-background: #ffffff;
+  --mw-foreground: #0a0a0a;   /* body text */
+  --mw-primary: #171717;      /* buttons, borders */
+  --mw-primary-foreground: #fafafa;
+  --mw-secondary: #f5f5f5;    /* muted surfaces */
+  --mw-accent: #f5f5f5;
+  --mw-muted-text: #737373;
+  --mw-border: #e5e5e5;
+  --mw-dark-surface: #0a0a0a; /* dark sections / footer */
+  --mw-font-heading: "Khand", sans-serif;          /* Bold */
+  --mw-font-body: "Hind", system-ui, sans-serif;   /* Regular */
+  --mw-radius: 0.625rem;      /* cards ~0.75rem; primary buttons square */
+  --mw-tracking-label: 0.1em; /* uppercase button/label tracking */
+}
+
+/* Hover motion (Max, Oct 10, 2026) */
+:root { --mw-ease: cubic-bezier(.2,.8,.2,1); --mw-dur: 180ms; }
+.mw-hover { transition: transform var(--mw-dur) var(--mw-ease), box-shadow var(--mw-dur) var(--mw-ease), background-color var(--mw-dur) var(--mw-ease); }
+.mw-hover:hover, .mw-hover:focus-visible { transform: translateY(-1px) scale(1.03); box-shadow: 0 6px 18px rgba(10,10,10,.12); }
+.mw-hover:active { transform: scale(.98); }
+@media (prefers-reduced-motion: reduce) { .mw-hover, .mw-hover:hover { transition: none; transform: none; } }
+
+:root{--cream:#FBF8F3;--pop:#C2410C;--pop2:#B45309;--ok:#0F766E;--ink2:#1D4ED8}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--cream);color:var(--mw-foreground);font-family:var(--mw-font-body);line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 16px 120px}
+h1,h2,h3{font-family:var(--mw-font-heading);font-weight:700;line-height:1.1;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.2rem,7vw,3.4rem)}h2{font-size:1.7rem;margin:36px 0 12px;display:flex;align-items:center;gap:8px}h3{font-size:1.35rem;margin:8px 0 4px}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.pop{color:var(--pop)}.pop2{color:var(--pop2)}.okc{color:var(--ok)}
+.mark{font-family:var(--mw-font-heading);letter-spacing:var(--mw-tracking-label);font-size:.85rem;color:var(--mw-muted-text)}
+header{border-bottom:1px solid var(--mw-border);padding-bottom:18px}.muted{color:var(--mw-muted-text)}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:8px 12px;border:1px solid var(--mw-border);border-radius:999px;background:#fff;font-weight:600}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--pop2)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}@media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:#fff;border:1px solid var(--mw-border);border-radius:.75rem;padding:12px 14px}.stat b{font-family:var(--mw-font-heading);font-size:2rem;display:block;line-height:1}.stat b.c{color:var(--pop)}
+.card{background:#fff;border:1px solid var(--mw-border);border-radius:.75rem;padding:16px;box-shadow:0 1px 2px rgba(10,10,10,.04)}
+ul.plain{list-style:none;padding:0;margin:0;display:grid;gap:10px}.row{display:flex;gap:10px;align-items:flex-start}
+.grid{display:grid;gap:12px;grid-template-columns:1fr}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{font-size:.72rem;text-transform:uppercase;letter-spacing:var(--mw-tracking-label);font-weight:600;padding:3px 8px;border-radius:4px;background:var(--mw-secondary)}
+.tag.rewrite{color:var(--ink2)}.tag.new{color:var(--ok)}.tag.st{color:var(--pop2)}
+.note{font-size:.9rem;color:var(--mw-muted-text);margin:4px 0 10px;overflow-wrap:anywhere}
+.acts{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}details{width:100%}details[open]{order:2}
+.btn,.lnk{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:2px solid var(--mw-primary);background:#fff;color:var(--mw-primary);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:var(--mw-tracking-label);text-decoration:none;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}.lnk{border-color:var(--mw-border)}details+.lnk{}
+.body{margin-top:12px;padding:14px;border-left:3px solid var(--pop);background:var(--cream);border-radius:0 .5rem .5rem 0;overflow-wrap:anywhere}.body h2{font-size:1.4rem;margin:18px 0 6px}.body h3{font-size:1.15rem}.body table{border-collapse:collapse;display:block;overflow-x:auto}.body td,.body th{border:1px solid var(--mw-border);padding:6px}
+.pdfs{display:flex;flex-wrap:wrap;gap:10px}
+footer{text-align:center;padding:30px 0 10px;font-size:.85rem}footer a{color:var(--mw-muted-text);text-decoration:none;display:inline-block}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(251,248,243,.95);border-top:1px solid var(--mw-border);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center}
+</style></head><body><div class="wrap">
+<header><div class="mark">MAX WEBERMAN · AGENT DASHBOARD</div><h1>Blog Command Center</h1>
+<div class="status"><span class="dot"></span>10 drafts awaiting Max&#x27;s review. Nothing published.</div><p class="muted" style="margin:8px 0 0">Updated Oct 13, 2026</p>
+<div class="stats"><div class="stat"><b>4</b>Rewrites</div><div class="stat"><b>6</b>New Drafts</div><div class="stat"><b class="c">3</b>Open Checks</div><div class="stat"><b>0</b>Published</div></div></header>
+<h2><svg class="ic pop" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Decisions Max Owes</h2><ul class="plain"><li class="card row"><svg class="ic pop" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div>Review the 4 rewrites and 6 new drafts (read below or in the PDFs)</div></li><li class="card row"><svg class="ic pop" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div>Send Max&#x27;s warranty terms for the warranty post</div></li><li class="card row"><svg class="ic pop" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div>Confirm what the company can legally do for owners on Michigan insurance claims</div></li><li class="card row"><svg class="ic pop" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div>Take the topic and writing-style quiz from the Branding Agent</div></li></ul>
+<h2><svg class="ic pop2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 17H3z"/><path d="M12 10v4M12 17v.5"/></svg>Open Checks</h2><ul class="plain"><li class="card row"><svg class="ic pop2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 17H3z"/><path d="M12 10v4M12 17v.5"/></svg><div><b>Attorney check of the &quot;sworn statement&quot; wording</b><span class="muted"> · Lien Waivers Explained · Optional</span></div></li><li class="card row"><svg class="ic pop2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 17H3z"/><path d="M12 10v4M12 17v.5"/></svg><div><b>Max&#x27;s warranty terms</b><span class="muted"> · Warranty and Upkeep</span></div></li><li class="card row"><svg class="ic pop2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 17H3z"/><path d="M12 10v4M12 17v.5"/></svg><div><b>What the company can legally do for owners on Michigan insurance claims</b><span class="muted"> · Insurance posts</span></div></li></ul>
+<h2><svg class="ic okc" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M12 10v7M9 14l3 3 3-3"/></svg>Review PDFs</h2><div class="pdfs"><a class="btn mw-hover" href="rewrites.pdf" target="_blank" rel="noopener"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M12 10v7M9 14l3 3 3-3"/></svg>Rewrites PDF</a><a class="btn mw-hover" href="new-posts.pdf" target="_blank" rel="noopener"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M12 10v7M9 14l3 3 3-3"/></svg>New Posts PDF</a></div>
+<h2><svg class="ic pop" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg>Rewrites of Live Articles</h2><div class="grid"><article class="post card" id="contracts-structure"><div class="tags"><span class="tag rewrite">Rewrite</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>How To Structure A Construction Contract: A Guide For Every Type Of Owner</h3><p class="note">Draft rewrite of https://maxweberman.com/blog/contracts-structure (originally published Apr 6, 2024). Suggested new slug: /blog/construction-contract-structures (redirect the old URL).</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>Every construction project comes down to three things: cost, time, and quality. That's true for a kitchen remodel, a restaurant build-out, a tenant improvement, or a spec home. The owner and the builder want the same result: quality work, on budget, on schedule.</p>
+<p>Then the job starts, and something unexpected turns up. That's when the contract matters. A good contract structure keeps both sides pulling in the same direction when things get hard. A bad one turns every surprise into an argument.</p>
+<p>This guide covers the common contract structures, who each one fits, and the safeguards every deal should have, whether you're a homeowner, a restaurant owner, a commercial tenant, or a developer.</p>
+<p><em>This article is general information, not legal advice. Have an attorney review any construction contract before you sign it.</em></p>
+<h2>Start With What Matters Most To You</h2>
+<p>Different owners carry different risks. The right contract starts with yours.</p>
+<ul>
+<li><strong>Homeowners:</strong> Budget certainty and quality. You're living with the result, and often living in the house during the work.</li>
+<li><strong>Restaurant owners:</strong> The opening date. Every week the doors stay closed is lost revenue and rent paid on an empty space. You're also managing a landlord work letter and any tenant improvement (TI) allowance, health and liquor permits, and long lead times on kitchen equipment.</li>
+<li><strong>Commercial tenants and clients:</strong> Landlord approvals, phasing, and keeping the business running while work happens around it.</li>
+<li><strong>Developers and investors:</strong> The pro forma. You're watching lender draws, your lender's requirements (often a guaranteed maximum price), and carrying costs that climb with every month the schedule slips.</li>
+</ul>
+<p>Keep your top priority in mind as you read the options below.</p>
+<h2>The Main Contract Structures</h2>
+<h3>Fixed Price (Lump Sum)</h3>
+<p>The owner and contractor agree on one price for a defined scope of work.</p>
+<ul>
+<li><strong>The appeal:</strong> Clarity. You know what the project should cost before it starts.</li>
+<li><strong>The catch:</strong> The contractor's profit is whatever is left after costs. That can push a contractor to cut corners to protect margin, especially if the job was underbid.</li>
+<li><strong>Where it breaks down:</strong> Disputes over change orders and what was or wasn't in the scope. Final payments are often contested.</li>
+<li><strong>Best fit:</strong> Smaller, well-defined projects with complete drawings and few unknowns.</li>
+</ul>
+<h3>Cost Plus Percentage</h3>
+<p>The owner pays the actual cost of the work plus a percentage for the contractor's overhead and profit.</p>
+<ul>
+<li><strong>The appeal:</strong> Open books. You see real costs, and you may benefit from the contractor's trade pricing.</li>
+<li><strong>Teamwork:</strong> The contractor's margin isn't at risk, so they act more like a team member than an opponent.</li>
+<li><strong>The catch:</strong> The contractor earns more when the project costs more. That can lead to upselling and less pressure to control costs.</li>
+<li><strong>Best fit:</strong> Small jobs or repairs where scope is hard to define up front, with an owner who trusts the contractor and watches costs.</li>
+</ul>
+<h3>Cost Plus A Flat Management Fee</h3>
+<p>The owner pays the actual cost of the work plus a fixed fee for construction management. This is how I work: a flat construction-management fee, with every cost passed through at cost.</p>
+<ul>
+<li><strong>Best alignment:</strong> My fee doesn't go up when costs go up. I have no reason to inflate the budget, and every reason to bring the job in on budget.</li>
+<li><strong>Shared interest in speed:</strong> A longer schedule means my fixed fee covers more months of work. We both want the job finished on time.</li>
+<li><strong>Real numbers:</strong> Costs come from real subcontractor bids, and you see them. That makes value engineering a joint effort: we look at the bids together and decide where to spend and where to save.</li>
+<li><strong>Reputation:</strong> Bringing jobs in on budget is what earns referrals and repeat clients.</li>
+<li><strong>Best fit:</strong> Larger or more complex projects: custom homes, restaurant build-outs, and commercial work where the scope will change as decisions get made.</li>
+</ul>
+<h3>Cost Plus Fee With A Guaranteed Maximum Price (GMP)</h3>
+<p>This is the cost-plus-fee structure with a ceiling. The owner pays actual costs plus the fee, up to an agreed maximum. Costs above the GMP are the contractor's responsibility unless the scope changes. Many GMP contracts also include a <strong>shared-savings clause:</strong> if the final cost comes in under the GMP, the savings are split between owner and contractor on terms set in the contract.</p>
+<ul>
+<li><strong>Why it matters:</strong> It fixes the biggest weakness of cost-plus (no price ceiling) while keeping the open books.</li>
+<li><strong>Who asks for it:</strong> Lenders and commercial and development clients often expect a GMP.</li>
+<li><strong>The trade-off:</strong> A GMP needs well-developed drawings to price accurately. The contractor carries more risk, so expect a contingency built into the GMP. Be clear about what counts as a scope change versus a cost the contractor absorbs.</li>
+<li><strong>Best fit:</strong> Financed projects, development work, and commercial build-outs where the owner or lender needs a cap.</li>
+</ul>
+<h3>Construction Management And Owner's Rep Agreements</h3>
+<p>Not every project needs a general contractor's agreement. Commercial clients and developers sometimes hire a construction manager or owner's representative instead.</p>
+<ul>
+<li><strong>Construction manager (CM):</strong> Manages bidding, scheduling, subcontractors, and cost control for a fee. Depending on the agreement, the CM may hold the trade contracts or the owner may sign with each trade directly.</li>
+<li><strong>Owner's rep:</strong> Works only for the owner. They review budgets, bids, schedules, pay applications, and change orders, and protect the owner's interests with the contractor, architect, and landlord.</li>
+<li><strong>Best fit:</strong> Owners running multiple projects or sites, owners who want an independent check on their builder, and developers who want an experienced builder on their side of the table.</li>
+</ul>
+<h2>The Honest Downsides Of A Flat Fee</h2>
+<p>I recommend cost plus a flat fee for most complex work, but it isn't free of risk. You should know the trade-offs going in.</p>
+<ul>
+<li><strong>You carry the cost risk.</strong> Without a GMP, there's no ceiling. If material prices rise or hidden conditions turn up, the owner pays the actual cost.</li>
+<li><strong>It only works with open books.</strong> You need full access to invoices, sub bids, and payments, and the right to audit them. Get that in writing.</li>
+<li><strong>The fee has to be defined.</strong> The contract should say what the fee covers, what's billed as a cost (site supervision, insurance, cleanup, temporary facilities), and how the fee changes if the scope grows or shrinks significantly.</li>
+<li><strong>It takes your attention.</strong> Open books only help if you review them. Expect regular cost reports and decisions on value-engineering options.</li>
+</ul>
+<h2>How Lender Draws And Retainage Work</h2>
+<p>If your project is financed, the lender pays the contractor in stages, called draws, rather than all at once. Expect the following:</p>
+<ul>
+<li><strong>Draw packages:</strong> Each draw request typically includes a progress summary, invoices, and lien waivers from the contractor and subs. Many lenders also send an inspector to confirm the work is in place before releasing funds.</li>
+<li><strong>Retainage:</strong> A portion of each payment is held back until the work is complete. Agree in the contract on the amount, when it's released, and what triggers release.</li>
+<li><strong>Cost reporting:</strong> Lenders want to see budget versus actual, line by line, with contingency use tracked. Open-book contracts make this straightforward because the numbers already exist.</li>
+</ul>
+<p>A builder who handles draw administration well keeps the money moving and the schedule on track. One who doesn't can stall a job waiting on funds.</p>
+<h2>Safeguards Every Contract Should Have</h2>
+<p>Whatever the structure and whoever the owner, these protect both sides:</p>
+<ul>
+<li><strong>Allowances:</strong> Set realistic allowances for items not yet selected (fixtures, finishes, equipment), and state how overages and savings are handled.</li>
+<li><strong>Change-order process:</strong> Every change is written, priced, and signed before the work is done, with its effect on schedule stated.</li>
+<li><strong>Contingency:</strong> A defined contingency for unknowns, with clear rules on who can use it and how it's reported.</li>
+<li><strong>Schedule milestones:</strong> Key dates in writing. For restaurant openings and other date-driven projects, discuss liquidated damages or other schedule remedies with your attorney.</li>
+<li><strong>Payment terms and lien waivers:</strong> A clear payment schedule tied to completed work, with lien waivers collected from the contractor and subcontractors as payments go out.</li>
+<li><strong>Site standards:</strong> Expectations for cleanliness, safety, working hours, and protection of occupied spaces. I keep my jobsites clean, and I put it in writing.</li>
+</ul>
+<h2>Illustrative Examples By Client Type</h2>
+<p>These are illustrative scenarios, not real projects or real numbers.</p>
+<ul>
+<li><strong>Homeowner, kitchen remodel:</strong> The layout and selections are mostly set, but the walls haven't been opened. Cost plus a flat fee with clear allowances for cabinets and fixtures gives open pricing and room to adjust when hidden conditions turn up. If the job is small and fully defined, a fixed price can work too.</li>
+<li><strong>Restaurant owner, build-out in a leased space:</strong> The opening date drives everything. Cost plus a flat fee, or a GMP if the drawings are complete, with schedule milestones, equipment lead times tracked from day one, and the landlord's work letter and TI allowance built into the budget.</li>
+<li><strong>Commercial tenant, office or retail improvement:</strong> The business must keep operating. A phased schedule, landlord approvals in the plan, and either cost plus fee or a CM agreement so the tenant sees real costs.</li>
+<li><strong>Developer or investor, spec or development home:</strong> The lender wants a cap and clean draws. Cost plus fee with a GMP and shared savings, retainage terms agreed with the lender, and monthly budget-versus-actual reporting.</li>
+</ul>
+<h2>Comparison At A Glance</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Fixed Price</th>
+<th>Cost Plus Percentage</th>
+<th>Cost Plus Flat Fee</th>
+<th>Cost Plus Fee With GMP</th>
+<th>CM / Owner's Rep</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Who carries cost risk</strong></td>
+<td>Contractor (within scope)</td>
+<td>Owner</td>
+<td>Owner</td>
+<td>Shared; contractor above the cap</td>
+<td>Owner</td>
+</tr>
+<tr>
+<td><strong>Price certainty</strong></td>
+<td>High at signing</td>
+<td>Low</td>
+<td>Low to medium</td>
+<td>High</td>
+<td>Depends on trade contracts</td>
+</tr>
+<tr>
+<td><strong>Open books</strong></td>
+<td>Usually no</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Contractor's profit when costs rise</strong></td>
+<td>Goes down</td>
+<td>Goes up</td>
+<td>Stays the same</td>
+<td>Stays the same, then at risk above the cap</td>
+<td>Fee-based</td>
+</tr>
+<tr>
+<td><strong>Change-order friction</strong></td>
+<td>High</td>
+<td>Low</td>
+<td>Low</td>
+<td>Medium</td>
+<td>Low to medium</td>
+</tr>
+<tr>
+<td><strong>Best fit</strong></td>
+<td>Small, fully defined jobs</td>
+<td>Small or hard-to-scope work</td>
+<td>Complex custom homes, build-outs, commercial</td>
+<td>Financed, development, and commercial work</td>
+<td>Multi-site owners, developers, owners who want independent oversight</td>
+</tr>
+</tbody>
+</table>
+<h2>Conclusion</h2>
+<p>Every structure has trade-offs. For most complex projects, cost plus a flat management fee lines up the owner's and contractor's incentives best. Add a GMP when you or your lender need a ceiling. Then back any structure with the safeguards above.</p>
+<p>The right contract builds trust between owners and contractors, and trust is what gets a project finished on budget and on time.</p>
+<p><em>This article is general information, not legal advice. Have an attorney review any construction contract before you sign it.</em></p></div></details><a class="lnk mw-hover" href="https://maxweberman.com/blog/contracts-structure" target="_blank" rel="noopener"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>Live Original</a></div></article><article class="post card" id="insurance-claims-value"><div class="tags"><span class="tag rewrite">Rewrite</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>Understanding Actual Cash Value And Replacement Cost Value In Property Insurance Claims</h3><p class="note">Draft light edit of https://maxweberman.com/blog/insurance-claims-value (originally published Jun 14, 2023). Part of an insurance series with /blog/public-adjusters-pillars.</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>If you're filing a property insurance claim, you need to understand two terms: Actual Cash Value (ACV) and Replacement Cost Value (RCV). The difference between them comes down to depreciation, and it can change how much you're paid. This article explains each term and how depreciation affects your claim.</p>
+<p><em>Every policy is different. This article explains general concepts, not the terms of your policy, and it isn't legal advice. Read your policy and ask your carrier or a licensed professional how it applies to your claim.</em></p>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Replacement Cost Value (RCV):</strong> The full cost to replace damaged or stolen property.</li>
+<li><strong>Actual Cash Value (ACV):</strong> The replacement cost of the property minus depreciation at the time of the loss.</li>
+<li><strong>Depreciation:</strong> The loss in value of an item over time from age and wear and tear.</li>
+</ul>
+<h2>Understanding Depreciation</h2>
+<p>Say you bought a new Tesla Model 3 for $40,000. A year later, you trade it in for a Model S. Would you expect $40,000 for the trade-in? No. The car has lost value over that year.</p>
+<p>The parts of your home work the same way. Cabinets, flooring, siding, roofing, and paint all lose value over time.</p>
+<h2>Insurance Claim Example</h2>
+<p>Say you spent $30,000 building a garage in your backyard, and you expect it to last 30 years. Ten years later, a storm drops a tree on it and destroys it. You're not sure you'll rebuild. Does that matter?</p>
+<p>After ten years, the garage has depreciated by $10,000, so its ACV is $20,000. The cost to replace it, its RCV, is still $30,000. (To keep it simple, this example ignores changes in construction costs over those ten years.)</p>
+<p>Under a typical replacement cost policy:</p>
+<ul>
+<li><strong>If you don't rebuild,</strong> insurance covers the ACV: $20,000 (RCV minus depreciation).</li>
+<li><strong>If you rebuild,</strong> you're covered for the RCV: $30,000.</li>
+</ul>
+<h2>Policies Vary</h2>
+<p>How this plays out depends on your policy. Points worth checking:</p>
+<ul>
+<li><strong>ACV-only vs. replacement cost coverage:</strong> Some policies pay only ACV, even if you rebuild.</li>
+<li><strong>Recoverable depreciation:</strong> Some replacement cost policies pay ACV first and release the depreciation after the repair or replacement is complete.</li>
+<li><strong>Deadlines:</strong> Some policies set a time limit to complete repairs or claim the withheld depreciation.</li>
+<li><strong>Limits and exclusions:</strong> Coverage limits, deductibles, and exclusions can all change the final number.</li>
+</ul>
+<p>Read the policy, and ask your carrier to explain anything that's unclear before you decide whether to rebuild.</p>
+<h2>Calculating Depreciation</h2>
+<p>Insurance adjusters often use industry software such as Xactimate to calculate depreciation. Depreciation figures can be negotiated. That matters most when the damaged property won't be replaced, because then the ACV is what you're paid, and lower depreciation means a higher payment.</p>
+<h2>Conclusion</h2>
+<p>Know the difference between ACV and RCV before you settle a property claim. Depreciation has a large effect on what you receive, and negotiating it can change your payout. Knowing how it works, and what your policy says, helps you make better decisions and protect your property.</p>
+<p><em>For more on getting a fair claim, see <a href="/blog/public-adjusters-pillars">Filing A Property Insurance Claim? Three Things That Decide Your Payout</a>.</em></p></div></details><a class="lnk mw-hover" href="https://maxweberman.com/blog/insurance-claims-value" target="_blank" rel="noopener"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>Live Original</a></div></article><article class="post card" id="kitchen-cabinetry"><div class="tags"><span class="tag rewrite">Rewrite</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>Ordering Kitchen Cabinetry: Where To Begin</h3><p class="note">Draft light edit of https://maxweberman.com/blog/kitchen-cabinetry (originally published Jun 8, 2023). [PHOTO] markers show where portfolio photos should go.</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>Designing and ordering kitchen cabinetry can be overwhelming. Today you can customize nearly every part of your cabinets, and all those choices make it hard to know where to start. Prices vary widely too, which makes it hard to tell whether you're getting a fair deal.</p>
+<p>Below, I'll (slightly) demystify the process by breaking down the key parts of a cabinet and offering practical suggestions. With the basics and a clear direction, you'll be ready to make informed decisions.</p>
+<p>[PHOTO: Finished custom kitchen from the portfolio, wide shot showing the full cabinet run]</p>
+<h2>Cabinet Components</h2>
+<h3>Door Selection</h3>
+<ul>
+<li><strong>Door Style:</strong> Door style is one of the biggest factors in both the look and the price of your cabinets. Some styles can double or even triple the cost. Styles range from sleek and minimal to highly detailed. Overlay (partial vs. full) also affects price.</li>
+<li><strong>Material Options:</strong> When choosing a material, consider density, grain pattern, color tone, and local availability. In metro Detroit, maple strikes a good balance between price and quality, though oak, cherry, alder, and hickory are also available. High-quality engineered wood exists, but it can't quite match the natural beauty of solid wood.</li>
+</ul>
+<p>[PHOTO: Close-up of a simple full-overlay door in stained maple]</p>
+<h3>Frame/Shell</h3>
+<p>How your cabinets are built plays a large role in how long they last. Many cabinet lines offer upgraded construction, but cost is always a concern. I recommend putting those upgrades on cabinets with exposed ends or backs, such as islands and peninsulas.</p>
+<p>[PHOTO: Island or peninsula showing a finished exposed end or back]</p>
+<h3>Finish (Stain vs. Paint)</h3>
+<p>Stained cabinetry made from high-quality wood has a timeless beauty. Stained wood is also often easier to work with and easier to restore as the finish fades over the years. Some owners still prefer painted cabinetry, mainly for its look. Painted cabinets typically cost about 10%–15% more.</p>
+<p>[PHOTO: Side-by-side of stained and painted cabinetry, if available]</p>
+<h3>Storage and Accessories</h3>
+<ul>
+<li><strong>Drawer Construction:</strong> For strong, reliable drawers, I highly recommend dovetail construction over stapled drawers. Drawers get used constantly, so they need to stand up to daily wear and tear.</li>
+<li><strong>Inserts:</strong> There's a wide range of cabinet inserts that make for excellent storage, but they can be costly. Examples include cutlery dividers, sink-base liners, and pull-outs.</li>
+<li><strong>Hinges:</strong> Slow-close hinges on all doors and drawers are well worth the cost. They prevent slamming and add a touch of luxury.</li>
+<li><strong>Moldings and Fillers:</strong> A well-designed layout usually includes finishing pieces like filler strips, crown molding, and other trim. These add to the cost, especially with painted cabinetry.</li>
+</ul>
+<p>[PHOTO: Open dovetail drawer, or a pull-out insert in use]</p>
+<h2>Practical Suggestions</h2>
+<ul>
+<li><strong>Cost-Conscious Door Selection:</strong> Choose a simple, timeless full-overlay door. It looks high-end and helps control cost.</li>
+<li><strong>Local Upgraded Wood:</strong> Choose a locally available wood that's a step up in quality, such as maple here in metro Detroit. Skip premium exotic woods to keep the budget reasonable.</li>
+<li><strong>Selective Frame Upgrades:</strong> Save frame upgrades for highly exposed cabinets, such as the ends of islands and peninsulas. You get durability where it counts without paying for it everywhere.</li>
+<li><strong>Prioritize Stained Cabinetry:</strong> Painted cabinetry costs more, adds complexity during installation, and may not last as long as stained cabinetry. Stained wood is timeless and easier to work with and maintain over the long run.</li>
+<li><strong>Durable Drawer Construction:</strong> Make sure your drawers use dovetail joinery. It's strong and holds up to frequent, everyday use.</li>
+<li><strong>Simplify Molding Options:</strong> Avoid complex moldings such as multi-piece crown or scribe moldings, and limit extra trim pieces. These specialty pieces are costly, and the labor to install them adds even more.</li>
+</ul>
+<p>[PHOTO: Finished kitchen with simple crown molding and clean lines]</p>
+<p>Use these tips and you'll strike the right balance of function, durability, looks, and budget in your kitchen cabinetry.</p></div></details><a class="lnk mw-hover" href="https://maxweberman.com/blog/kitchen-cabinetry" target="_blank" rel="noopener"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>Live Original</a></div></article><article class="post card" id="public-adjusters-pillars"><div class="tags"><span class="tag rewrite">Rewrite</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>Filing A Property Insurance Claim? Three Things That Decide Your Payout</h3><p class="note">Draft rewrite of https://maxweberman.com/blog/public-adjusters-pillars (originally published Jun 9, 2023). Audience changed from public adjusters to property owners. Suggested new slug: /blog/fair-insurance-claim-payout (redirect the old URL). Companion to /blog/insurance-claims-value.</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>When your home or building is damaged, the insurance claim decides how well it gets put back together. A fair payout depends on three things: a full understanding of the building process, a correct Xactimate estimate, and a close reading of your policy.</p>
+<p>You don't have to master all three yourself. You should know what they are, so you can tell whether your claim is being handled right and who you need on your side. That might be a contractor who knows insurance work, a licensed public adjuster, or both.</p>
+<p><em>This article is general information, not legal advice. Policies differ, and so do the rules on who can represent you in a claim. Read your policy and check with your carrier or a licensed professional.</em></p>
+<h2>1. The Building Process: Every Step Counts</h2>
+<p>A contractor's quote often lumps many steps into one line. Take "replace moldy drywall." On a claim, that one line should be broken into every step it takes to do the work:</p>
+<ul>
+<li>Mask off surfaces and the room</li>
+<li>Remove the damaged drywall</li>
+<li>Remove the baseboard and casing</li>
+<li>Supply and install new drywall</li>
+<li>Tape, mud, and finish the new drywall</li>
+<li>Prime and paint the new drywall</li>
+<li>Install new baseboard and casing</li>
+<li>Paint the baseboard and casing</li>
+<li>Clean the area and haul away debris</li>
+</ul>
+<p>Every step costs money. If a step is missing from the estimate, it's missing from your payout. Someone who knows how the work is actually built will catch what's been left out.</p>
+<p><strong>What to do:</strong> Ask for an itemized estimate, not a lump sum. Walk through it line by line and ask about anything that seems missing.</p>
+<h2>2. Xactimate: The Software Behind Your Estimate</h2>
+<p>Insurance claims run on software. On property claims, the industry standard is Xactimate. It's a detailed construction pricing tool, and adjusters use it to price a claim by itemizing the scope of damage.</p>
+<p>That means your claim is usually being priced line by line in Xactimate. If your contractor or adjuster can work in the same system, they can compare estimates with the carrier's adjuster item by item and point to exactly what's missing or underpriced. That makes for a clearer, faster conversation and a more complete estimate.</p>
+<p><strong>What to do:</strong> Ask the carrier for a copy of its estimate. Ask whether your contractor or adjuster works in Xactimate and can respond in the same format.</p>
+<h2>3. Your Policy: Know What You're Covered For</h2>
+<p>The policy sets the limits and conditions of your coverage, and the details matter. Questions to ask early:</p>
+<ul>
+<li>If you have to move out during repairs, does the policy cover rent or other living expenses?</li>
+<li>If you own a business, does it cover lost income while you're closed?</li>
+<li>If the city requires code upgrades during the repair, are those covered?</li>
+<li>Is your coverage replacement cost or actual cash value? (See <a href="/blog/insurance-claims-value">Understanding Actual Cash Value And Replacement Cost Value</a>.)</li>
+</ul>
+<p>Missing a detail in the policy can mean leaving money on the table, or making a mistake that hurts your claim. Reading it closely, or having someone who knows policies read it with you, helps you get what you're entitled to.</p>
+<p><strong>What to do:</strong> Get a full copy of your policy, including endorsements. Note the coverages, limits, deadlines, and duties after a loss.</p>
+<h2>Conclusion</h2>
+<p>A fair claim comes down to three things: knowing how the work gets built, pricing it correctly in Xactimate, and knowing what your policy covers. Get those right, or work with people who have, and you give yourself the best chance at a payout that fully restores your property.</p></div></details><a class="lnk mw-hover" href="https://maxweberman.com/blog/public-adjusters-pillars" target="_blank" rel="noopener"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>Live Original</a></div></article></div>
+<h2><svg class="ic okc" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>New Post Drafts</h2><div class="grid"><article class="post card" id="allowances-explained"><div class="tags"><span class="tag new">New</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>Allowances Explained: Why Your Budget Moves</h3><p class="note">New post draft for maxweberman.com. Suggested slug: /blog/allowances-explained.</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>Sooner or later on almost every custom home or build-out, an owner looks at a cost report and asks, "Why did the number change?" Very often, the answer is an allowance.</p>
+<p>Allowances are one of the most misunderstood parts of a construction budget. They're also one of the most useful. Once you understand how they work, a moving budget stops feeling like a surprise and starts feeling like what it is: the cost of decisions you haven't made yet.</p>
+<p><em>This article is general information, not legal advice. Have an attorney review any construction contract before you sign it.</em></p>
+<h2>What an Allowance Is</h2>
+<p>An allowance is a set amount in the budget for something that hasn't been fully selected when the contract is signed.</p>
+<p>Common examples include:</p>
+<ul>
+<li><strong>Finishes:</strong> Tile, flooring, countertops, paint colors, and trim profiles.</li>
+<li><strong>Fixtures:</strong> Plumbing fixtures, light fixtures, and door hardware.</li>
+<li><strong>Appliances and equipment:</strong> Kitchen appliances in a home, or cooking and refrigeration equipment in a restaurant.</li>
+<li><strong>Cabinetry and millwork:</strong> Especially when the design is still being refined.</li>
+<li><strong>Landscaping and exterior items:</strong> Often selected late in the job.</li>
+</ul>
+<p>The allowance is a placeholder. It says, "We know you'll need this, and here's a reasonable amount to carry for it until you choose." When you make the selection, the real cost replaces the placeholder.</p>
+<h2>Why Allowances Are a Necessary Part of the Contract</h2>
+<p>Some owners see allowances as a loophole, a way for the builder to leave the price open. I see it the other way around. Allowances are what make an honest contract possible.</p>
+<ul>
+<li><strong>You can't price what hasn't been chosen.</strong> On a custom home, you might not pick your tile until the walls are framed. Nobody can give you a real number on tile you haven't seen yet. An allowance is an honest stand-in for that number.</li>
+<li><strong>They let construction start on time.</strong> Without allowances, every selection would have to be finalized before the contract could be signed. On most custom work, that would push the start date back a long way. Allowances let us start building while you keep making decisions.</li>
+<li><strong>They keep the decisions yours.</strong> An allowance doesn't lock you into a specific product. You still get to choose. The contract just records what's been budgeted so far.</li>
+<li><strong>They make changes visible.</strong> When an allowance is written into the contract, everyone can see the budgeted amount and compare it to the actual cost. That turns a vague "it cost more" into a clear line item.</li>
+<li><strong>They protect both sides.</strong> A contract that pretends every item is fully priced when it isn't is a dispute waiting to happen. A contract with clear allowances puts the open items on the table from day one.</li>
+</ul>
+<p>In short, allowances aren't a weakness in the contract. They're how the contract deals honestly with the parts of the project that are still being designed.</p>
+<h2>Why Your Budget Moves</h2>
+<p>Here's the part that catches people off guard. When you select a fixture or finish, the real cost might be higher or lower than the allowance. The budget moves to match.</p>
+<p>That movement comes from a few common sources:</p>
+<ul>
+<li><strong>Selections above or below the allowance.</strong> You fall in love with a tile that costs more than what was carried. Or you pick a simpler fixture and come in under.</li>
+<li><strong>Installation costs.</strong> A heavier stone or a more complex tile pattern can change the labor, not just the material.</li>
+<li><strong>Related work.</strong> A larger appliance might need a different cabinet layout, a new electrical circuit, or a bigger gas line.</li>
+<li><strong>Lead times.</strong> A special-order item might need to be ordered early or expedited to protect the schedule.</li>
+<li><strong>Allowances that were set too low.</strong> This is the one to watch. An allowance that doesn't reflect what you actually want will almost always go over.</li>
+</ul>
+<p>None of this is a problem as long as it's tracked and you know about it before the money is spent.</p>
+<h2>How I Handle Allowances</h2>
+<p>I work on a flat construction-management fee, and every cost passes through to you at cost. That shapes how allowances work on my jobs.</p>
+<ul>
+<li><strong>Savings are yours.</strong> If a selection comes in under the allowance, the difference stays in your budget. I don't keep it.</li>
+<li><strong>Overages are visible.</strong> If a selection comes in over, you'll see the real number before we commit, not after.</li>
+<li><strong>My fee doesn't change with your choices.</strong> I don't earn more when you choose a more expensive fixture. My advice on selections is straight.</li>
+<li><strong>Allowances get set with real input.</strong> Where I can, I base allowances on real pricing from suppliers and subs, and on a frank conversation with you about what you're likely to choose.</li>
+</ul>
+<h2>Illustrative Example</h2>
+<p>This is an illustrative scenario, not a real project.</p>
+<p>An owner building a custom home has an allowance for primary bathroom tile. During selections, they choose a large-format stone that costs more than the allowance and also needs extra labor to install. Before anything is ordered, the owner gets an updated cost showing the material difference and the added labor. They decide to keep the stone in the primary bath and pick a simpler tile for a guest bath, which comes in under its own allowance. The overall budget moves a little, and the owner knew exactly why before it did.</p>
+<p>That's how it's supposed to work. The budget moved, but nobody was surprised.</p>
+<h2>How to Keep Allowances From Getting Away From You</h2>
+<p>A few habits make a big difference:</p>
+<ul>
+<li><strong>Be honest about your taste early.</strong> If you know you want high-end finishes, say so before the allowances are set. A realistic allowance is far better than a low one that looks good on paper.</li>
+<li><strong>Ask what each allowance includes.</strong> Is it material only, or material and installation? Does it include delivery, tax, and accessories? Get it in writing.</li>
+<li><strong>Make selections on schedule.</strong> Late selections can create rush orders or delays. Your builder should give you a selection schedule tied to the construction schedule.</li>
+<li><strong>Review the running totals.</strong> Ask for a cost report that shows each allowance, what's been selected, and the difference. Look at it regularly.</li>
+<li><strong>Decide how overages are handled.</strong> The contract should state how overages and savings are treated and whether any adjustment to the fee applies. On my jobs, costs pass through at cost.</li>
+<li><strong>Use the contingency for unknowns, not upgrades.</strong> Contingency is for hidden conditions and surprises. If you want to upgrade a finish, treat it as a selection decision, not a contingency draw.</li>
+</ul>
+<h2>Allowances and the Bigger Picture</h2>
+<p>Allowances are one of several safeguards that keep a contract fair. Change orders, contingency, and open-book cost reporting all work together with them. I cover how those fit into the overall contract in <a href="https://maxweberman.com/blog/contracts-structure">How to Structure a Construction Contract</a>.</p>
+<p>The goal is the same across all of them: no surprises. You should always know where the budget stands and why.</p>
+<p><em>This article is general information, not legal advice. Have an attorney review any construction contract before you sign it.</em></p>
+<h2>Let's Talk About Your Budget</h2>
+<p>If you're planning a custom home or a restaurant build-out in metro Detroit and want a budget you can actually follow, reach out through <a href="https://maxweberman.com">maxweberman.com</a>. I'll show you how I set allowances and how I track them from the first selection to the last.</p></div></details></div></article><article class="post card" id="construction-loans-and-draws"><div class="tags"><span class="tag new">New</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>Construction Loans and Draws, Explained for Owners</h3><p class="note">New post draft for maxweberman.com. Suggested slug: /blog/construction-loans-and-draws.</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>A lot of people who want to build a custom home assume the financing is out of reach before they ever talk to a lender. They picture a mountain of paperwork, or they assume construction financing is only for developers. If that sounds like you, my advice is simple: have the conversation before you decide.</p>
+<p>A construction or home loan is more reachable than many people think. What makes it hard isn't usually the loan itself. It's the process of drawing the money during the build. That's where your builder matters, and it's what this article is about.</p>
+<p><em>This article is general information, not financial or legal advice. Every lender and loan works differently. Talk to your lender, and a financial advisor or attorney as needed, about your situation.</em></p>
+<h2>Don't Rule Yourself Out</h2>
+<p>Construction financing exists because most people don't pay cash for a house, and a house that doesn't exist yet can't be financed like one that does. Lenders who make construction loans do this every day. They have a process for it.</p>
+<p>If you're thinking about building, a few early steps help:</p>
+<ul>
+<li><strong>Talk to a lender early,</strong> before the design is finished. Ask what they need from you and from your builder.</li>
+<li><strong>Ask about the whole path,</strong> from the construction phase to the loan you'll have once the house is done.</li>
+<li><strong>Understand what the lender will want to see:</strong> usually plans, a budget, a builder contract, and information about the builder.</li>
+<li><strong>Get your own numbers in order.</strong> Your lender will tell you what they need.</li>
+</ul>
+<p>I can't tell you whether you'll qualify. Your lender can. But don't talk yourself out of a project before you've asked.</p>
+<h2>How a Construction Loan Differs From a Regular Mortgage</h2>
+<p>With a regular mortgage, the lender pays for a finished house all at once. With a construction loan, the lender pays as the house gets built.</p>
+<p>The money is released in stages, called <strong>draws</strong>. Each draw pays for work that's been completed since the last one. The lender wants to make sure the money they've released is matched by real work in place on the property.</p>
+<p>On many construction loans, interest is charged on the amount drawn so far, not the full loan amount. Ask your lender how theirs works and what happens when construction is finished.</p>
+<h2>How Draws Work</h2>
+<p>The details vary by lender, but the general flow looks like this:</p>
+<ol>
+<li><strong>The budget is set up.</strong> Before construction starts, the lender reviews the project budget, often broken into line items or a draw schedule. This becomes the framework for every draw.</li>
+<li><strong>Work gets done.</strong> The builder completes a stage of work, such as foundation, framing, or rough mechanicals.</li>
+<li><strong>The builder submits a draw request.</strong> It typically includes a summary of work completed, invoices, an updated budget, and lien waivers from the builder, subs, and suppliers.</li>
+<li><strong>The lender inspects.</strong> Many lenders send an inspector to confirm the work is in place and matches the request.</li>
+<li><strong>The lender reviews and releases funds.</strong> The lender may also check title for any new liens. Then the money is released, often to the builder, the owner, or a title company depending on the lender's process.</li>
+<li><strong>Subs and suppliers are paid,</strong> and waivers are collected for that payment.</li>
+<li><strong>Repeat</strong> until the project is complete.</li>
+</ol>
+<h2>Inspections</h2>
+<p>The lender's inspector is there to protect the lender's money, which also helps protect you. Their job is to confirm that the work being paid for has actually been done.</p>
+<p>A few things to know:</p>
+<ul>
+<li><strong>The lender's inspection is not a building code inspection.</strong> Your municipality's building inspections are separate and still required.</li>
+<li><strong>Timing matters.</strong> If the inspection is late, the draw is late. A builder who plans draw timing around the schedule keeps the money from stalling the job.</li>
+<li><strong>The request has to match the site.</strong> If the paperwork claims work that isn't finished, the draw can be reduced or held. Accurate requests keep things moving.</li>
+</ul>
+<h2>Retainage</h2>
+<p>Retainage is a portion of each payment that's held back until the work is complete. It gives the owner and lender leverage to make sure the job gets finished and punch-list items get done.</p>
+<ul>
+<li><strong>Agree on it up front.</strong> The contract should say how much is held, when it's released, and what triggers release.</li>
+<li><strong>Lenders may have their own requirements.</strong> Your contract and your loan should line up.</li>
+<li><strong>Final release usually depends on closeout:</strong> completed punch list, final inspections, and final lien waivers from everyone who worked on the project.</li>
+</ul>
+<h2>Why Your Builder Must Know Construction Draws</h2>
+<p>This is the second point I want every owner to hear. If your builder doesn't have experience with construction draws, the paperwork becomes a big hill to climb, and you'll be the one climbing it.</p>
+<p>A draw is only as good as the paperwork behind it. Lenders want budgets in their format, invoices that match the line items, waivers from every sub and supplier, and progress that matches the inspection. A builder who isn't used to this can create problems:</p>
+<ul>
+<li><strong>Late or rejected draws</strong> because the paperwork is incomplete or doesn't match the site.</li>
+<li><strong>Subs waiting for payment,</strong> which can slow the schedule or cause them to pull crews.</li>
+<li><strong>Budget confusion</strong> when costs aren't tracked line by line.</li>
+<li><strong>Change orders that surprise the lender,</strong> who may need to approve changes that affect the budget.</li>
+<li><strong>Missing lien waivers</strong> that hold up funding.</li>
+</ul>
+<p>Many lenders also review the builder before approving the loan. Ask your builder directly: "Have you worked with construction draws before? What does your draw package include?"</p>
+<h2>How I Handle Draws</h2>
+<p>I'm a licensed Michigan residential builder, and draw administration is part of how I run a job.</p>
+<ul>
+<li><strong>Open books make draws easier.</strong> I work on a flat construction-management fee with costs passed through at cost. Real sub bids and real invoices already exist, so the numbers for each draw are already there.</li>
+<li><strong>Budget versus actual, line by line.</strong> I track the budget the way lenders expect to see it, with contingency use tracked.</li>
+<li><strong>Lien waivers with every draw.</strong> Waivers from the builder, subs, and suppliers come with the request. I cover how they work in <a href="https://maxweberman.com/blog/lien-waivers-explained">Lien Waivers Explained</a>.</li>
+<li><strong>Draws planned around the schedule.</strong> Requests and inspections are timed so the money arrives when the work needs it.</li>
+<li><strong>Changes handled in writing.</strong> Change orders are priced and documented so they can go to the lender when needed.</li>
+</ul>
+<h2>Illustrative Example</h2>
+<p>This is an illustrative scenario, not a real project.</p>
+<p>An owner building a custom home has a construction loan with a draw schedule. Framing is finished, so the builder submits a draw request with an updated budget, invoices for framing labor and lumber, and conditional waivers from the framer and the lumber supplier. The lender's inspector visits, confirms framing is complete, and the lender releases the draw, less the agreed retainage. The builder pays the framer and supplier and collects unconditional waivers. The next draw request is already being put together as the rough mechanicals finish.</p>
+<h2>Questions to Ask Before You Start</h2>
+<ul>
+<li>What does my lender need from me and from my builder?</li>
+<li>How many draws will there be, and what triggers each one?</li>
+<li>How are inspections scheduled, and how long does funding take after one?</li>
+<li>How much retainage is held, and when is it released?</li>
+<li>How are change orders handled with the lender?</li>
+<li>Has my builder managed construction draws before?</li>
+</ul>
+<p><em>This article is general information, not financial or legal advice. Talk to your lender about how your specific loan works.</em></p>
+<h2>Let's Talk About Your Build</h2>
+<p>If you're thinking about building a custom home in metro Detroit and wondering whether financing is within reach, talk to a lender, and talk to me. Reach out through <a href="https://maxweberman.com">maxweberman.com</a>. I'll walk you through how I handle budgets and draws so the paperwork doesn't become the hard part.</p></div></details></div></article><article class="post card" id="flat-fee-vs-percentage"><div class="tags"><span class="tag new">New</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>Why I Charge a Flat Fee Instead of a Percentage</h3><p class="note">New post draft for maxweberman.com. Suggested slug: /blog/flat-fee-vs-percentage. Companion to /blog/contracts-structure.</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>One of the first questions you should ask any builder is simple: "How do you get paid?" It might be the most important question you ask, because the answer tells you what that builder is rewarded for.</p>
+<p>My answer is simple. I charge a flat construction-management fee. Every cost on the job, from the framing crew to the light fixtures, is passed through to you at cost. I don't mark up the subs. I don't mark up materials. My fee is agreed up front, and it doesn't grow when the budget does.</p>
+<p>I wrote a full guide to contract structures, including fixed price, cost plus percentage, GMP, and owner's rep agreements, with a side-by-side comparison. If you want the whole picture, read <a href="https://maxweberman.com/blog/contracts-structure">How to Structure a Construction Contract</a>. This post is the shorter, personal version: why I work this way, and what it means for you.</p>
+<h2>The Problem with a Percentage</h2>
+<p>Under a cost-plus-percentage contract, the builder earns a percentage of everything that gets spent. Spend more, and the builder makes more.</p>
+<p>That doesn't mean every builder who works on a percentage is upselling you. Plenty of good builders use it. But the incentive is built into the deal, and incentives matter more than intentions over the length of a project. When you're standing in the kitchen deciding between two countertops, or weighing whether a structural upgrade is really needed, you should know that the person advising you gets nothing extra either way.</p>
+<p>That's the position I want to be in. When I tell you something is worth the money, I want you to believe me. When I tell you it isn't, I want you to know I'm not leaving money on the table by saying so. I'm just telling you the truth.</p>
+<h2>What a Flat Fee Changes</h2>
+<p>A flat fee lines up what I want with what you want.</p>
+<ul>
+<li><strong>I have no reason to inflate the budget.</strong> My fee stays the same whether the job costs more or less. Every dollar I save you is yours.</li>
+<li><strong>I want the job done on time.</strong> My fee covers the project, not the month. If the schedule drags, I'm doing more work for the same fee. Finishing on time is good for both of us.</li>
+<li><strong>You see the real numbers.</strong> Costs pass through at cost, so the books are open. You see what the subs bid and what the invoices say.</li>
+<li><strong>My reputation rides on the result.</strong> Referrals and repeat clients come from jobs that finish on budget. That's the business I want to build.</li>
+</ul>
+<h2>Real Bids, Not Guesses</h2>
+<p>A flat fee only works if the costs underneath it are real. So I get real bids from subcontractors, not placeholder numbers I made up to win the job.</p>
+<p>When the bids come in, we look at them together. Sometimes the low bid is the right call. Sometimes it's missing scope, and the second bid is the better value. Sometimes one trade is priced high because of a detail in the drawings that we can change without changing what you care about. You get to see all of that, and you get a say in it.</p>
+<h2>Value Engineering Is a Joint Effort</h2>
+<p>Value engineering gets a bad reputation because it often means "make it cheaper and hope nobody notices." That's not what I mean by it.</p>
+<p>To me, value engineering means sitting down with you and the bids and asking where the money is doing the most good. Where does spending more get you something you'll notice every day? Where can we save without giving up quality, durability, or the look you're after? Maybe it's a different material with the same finish. Maybe it's a simpler detail that takes less labor. Maybe it's a change in sequence that saves a trip for one of the trades.</p>
+<p>Because my fee doesn't move, I can give you a straight answer on every one of those questions. You make the call. I give you the information and my honest opinion.</p>
+<h2>Clean Jobsites Are Part of the Deal</h2>
+<p>This might sound like a side note, but it isn't. I keep very clean jobsites. Materials are stored properly, debris is cleared, and the site is ready for the next trade when they show up.</p>
+<p>A clean site is safer. It protects the work that's already in place. It helps subs work faster because they aren't digging through someone else's mess. And it tells you something about how the rest of the job is being run. If the site is organized, the schedule and the books usually are too.</p>
+<h2>What a Flat Fee Asks of You</h2>
+<p>I'll be honest about the trade-offs, because a flat fee isn't the right fit for everyone.</p>
+<ul>
+<li><strong>You carry the cost risk.</strong> Without a guaranteed maximum price, there's no ceiling. If material prices rise or a hidden condition turns up behind a wall, you pay the actual cost. If you or your lender need a cap, we can talk about adding one.</li>
+<li><strong>Open books need your attention.</strong> I'll send you cost reports and decisions to make. They only help if you read them.</li>
+<li><strong>The fee needs clear terms.</strong> The contract should spell out what the fee covers, what's billed as a cost, and how the fee adjusts if the scope changes significantly.</li>
+</ul>
+<p>I cover these in more detail in the <a href="https://maxweberman.com/blog/contracts-structure">contracts guide</a>. The short version: a flat fee works best for owners who want transparency and are willing to be involved in decisions.</p>
+<h2>Where a Flat Fee Fits Best</h2>
+<p>I use this structure on custom homes, restaurant build-outs, and other complex projects where decisions get made along the way. Those are the jobs where a fixed price tends to turn into change-order fights, and where a percentage quietly rewards a bigger budget.</p>
+<p>If you're building a custom home and you're still choosing finishes, or opening a restaurant where the scope will shift as the kitchen design gets finalized, a flat fee gives us room to make good decisions together without anyone's paycheck tilting the conversation.</p>
+<p><em>This article is general information, not legal advice. Have an attorney review any construction contract before you sign it.</em></p>
+<h2>Let's Talk About Your Project</h2>
+<p>If you're planning a custom home or a restaurant build-out in metro Detroit and want a builder whose fee doesn't grow with your budget, let's talk. Reach out through <a href="https://maxweberman.com">maxweberman.com</a>, and I'll walk you through how my fee works and what it covers.</p></div></details></div></article><article class="post card" id="lien-waivers-explained"><div class="tags"><span class="tag new">New</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>Lien Waivers Explained</h3><p class="note">New post draft for maxweberman.com. Suggested slug: /blog/lien-waivers-explained.</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>If you're paying for construction, lien waivers are one of the most important pieces of paper you'll handle. They're also one of the most overlooked. Owners focus on the drawings, the budget, and the schedule, and then pay invoices without the one document that proves the money reached the people who did the work.</p>
+<p>I want every owner I work with to understand them. Here's what they are, the four types you'll see, and why you should collect them from every sub and supplier before money goes out.</p>
+<p><em>This article is general information, not legal advice. Lien rights, forms, and deadlines depend on your state and your situation. Talk to a construction attorney about your specific project.</em></p>
+<h2>First, What Is a Lien?</h2>
+<p>A construction lien is a claim against your property by someone who supplied labor or materials to improve it and wasn't paid. Contractors, subcontractors, suppliers, and laborers can have lien rights, depending on state law and whether they followed the required steps.</p>
+<p>Here's the part that surprises owners: a lien can be filed against your property even if you paid your builder in full. If your builder took your payment and didn't pay the electrician or the lumber yard, those parties may still have a claim against your property.</p>
+<p>A lien can cloud your title, complicate a refinance or a sale, and hold up a construction loan draw. Clearing one takes time and money.</p>
+<h2>What a Lien Waiver Does</h2>
+<p>A lien waiver is a signed document in which a contractor, sub, or supplier gives up some or all of their lien rights in exchange for payment.</p>
+<p>Put simply, it's a receipt with teeth. It says, "I've been paid this amount for this work, and I won't file a lien for it." When you collect waivers from everyone who worked on your project, you have a paper trail showing that the money you paid made it all the way down the chain.</p>
+<p>Lien waivers come in two pairs of types. Every waiver is either <strong>conditional or unconditional</strong>, and either <strong>partial or final</strong>.</p>
+<h2>Conditional or Unconditional</h2>
+<p>This pair is about whether the waiver depends on the payment actually clearing.</p>
+<h3>Conditional Waiver</h3>
+<p>A conditional waiver says, in effect, "I give up my lien rights for this amount, once I actually receive the payment."</p>
+<ul>
+<li><strong>When it's used:</strong> Before or at the time of payment. The sub signs it, you or your builder release the check, and the waiver takes effect once the payment clears.</li>
+<li><strong>Why it's useful:</strong> It protects the person being paid. They aren't giving up their rights for a check that might bounce.</li>
+<li><strong>The limitation for you:</strong> It generally doesn't protect you until the payment actually goes through.</li>
+</ul>
+<h3>Unconditional Waiver</h3>
+<p>An unconditional waiver says, "I've been paid, and I give up my lien rights for this amount." No conditions.</p>
+<ul>
+<li><strong>When it's used:</strong> After the payment has cleared.</li>
+<li><strong>Why it's useful:</strong> It's the stronger protection for the owner. Once it's signed, it's effective.</li>
+<li><strong>The caution:</strong> A sub should never sign an unconditional waiver before being paid, and an owner shouldn't ask them to. That's what the conditional waiver is for.</li>
+</ul>
+<p><strong>The common sequence:</strong> collect a conditional waiver with the payment request, release the payment, then collect an unconditional waiver once the payment has cleared.</p>
+<h2>Partial or Final</h2>
+<p>This pair is about how much of the job the waiver covers.</p>
+<h3>Partial Waiver</h3>
+<p>A partial waiver covers a specific payment or a specific period of work. It's used for progress payments during the job.</p>
+<ul>
+<li><strong>What it says:</strong> "I've been paid (or will be paid) this amount for work through this date."</li>
+<li><strong>What it doesn't cover:</strong> Work after that date, or amounts still owed, such as retainage or approved changes not yet billed.</li>
+</ul>
+<h3>Final Waiver</h3>
+<p>A final waiver covers the whole job. It's collected with the final payment.</p>
+<ul>
+<li><strong>What it says:</strong> "I've been paid in full for all work on this project, and I give up all my lien rights for it."</li>
+<li><strong>When it matters:</strong> At closeout, before final payment and the release of any retainage. This is the document that lets you close the books on that sub or supplier.</li>
+</ul>
+<h2>Putting the Four Together</h2>
+<p>Combine the two pairs and you get four types:</p>
+<ul>
+<li><strong>Conditional partial:</strong> Collected with each progress payment request.</li>
+<li><strong>Unconditional partial:</strong> Collected after each progress payment clears.</li>
+<li><strong>Conditional final:</strong> Collected with the final payment request.</li>
+<li><strong>Unconditional final:</strong> Collected after the final payment clears. This is the one you want in hand from everyone before the job is closed out.</li>
+</ul>
+<h2>Why You Need Them From Every Sub and Supplier</h2>
+<p>This is the most important point in this article. A waiver from your builder alone isn't enough.</p>
+<p>Your builder's waiver covers your builder's lien rights. It doesn't cover the plumber, the roofer, the concrete supplier, or the cabinet shop. Each of them may have their own lien rights. If they aren't paid, your builder's waiver doesn't protect you from their claims.</p>
+<p>So before money goes out, you, your builder, or your lender should have waivers from:</p>
+<ul>
+<li><strong>The builder or general contractor</strong></li>
+<li><strong>Every subcontractor</strong> who worked during the period being paid</li>
+<li><strong>Every supplier</strong> who delivered materials during that period, including large material suppliers that might not visit the site often</li>
+<li><strong>Lower-tier subs and suppliers,</strong> where they exist, such as a supplier to one of your subs</li>
+</ul>
+<p>A good habit is to ask your builder for a signed list of every sub and supplier on the job, with what each has been paid and what's still owed. This is often called a sworn statement. Then match the waivers against that list. If someone on the list doesn't have a waiver for the period, ask why before the next payment.</p>
+<h2>Michigan Has Statutory Forms</h2>
+<p>Michigan has statutory forms for lien waivers. That means the wording of a waiver isn't something to improvise. Use the correct form for the type of waiver and the stage of the job, and have your attorney confirm what your project needs. The forms exist, and the right ones should be used.</p>
+<h2>How I Handle Lien Waivers</h2>
+<p>I work on a flat construction-management fee with costs passed through at cost, and the books are open. Lien waivers are part of that openness.</p>
+<ul>
+<li><strong>Waivers come with the payment paperwork.</strong> When I submit a payment request, the waivers for that period come with it.</li>
+<li><strong>Every sub and supplier is tracked.</strong> You'll see who worked on the job, what they were paid, and the waiver that goes with it.</li>
+<li><strong>Final waivers before final payment.</strong> Retainage and final payments are released against final waivers.</li>
+<li><strong>Lender draws run smoother.</strong> If your project is financed, your lender will likely require waivers with each draw. Having them ready keeps the money moving and the job on schedule.</li>
+</ul>
+<h2>Illustrative Example</h2>
+<p>This is an illustrative scenario, not a real project.</p>
+<p>An owner pays a progress payment. With the payment request, the builder submits conditional partial waivers from the framing sub, the lumber supplier, and the window supplier for that period. The owner releases the payment. Once it clears, the builder collects unconditional partial waivers from each of them. At the end of the job, the same parties sign conditional final waivers with the final payment request, then unconditional final waivers once the final payment clears. The owner closes out the project with a complete set of waivers from everyone on the sworn statement.</p>
+<h2>A Quick Checklist for Owners</h2>
+<ul>
+<li>Ask your builder how they handle lien waivers before you sign the contract.</li>
+<li>Get a list of every sub and supplier on the job, and keep it updated.</li>
+<li>Collect conditional waivers with each payment request and unconditional waivers after it clears.</li>
+<li>Match every waiver to the list, including suppliers.</li>
+<li>Hold final payment and retainage until final waivers are in.</li>
+<li>Use the correct statutory forms, and keep every waiver on file.</li>
+</ul>
+<p><em>This article is general information, not legal advice. Talk to a construction attorney about lien rights and waiver forms for your project.</em></p>
+<h2>Want a Builder Who Keeps the Paperwork Clean?</h2>
+<p>If you're planning a custom home or a restaurant build-out in metro Detroit and want a builder who tracks every payment and every waiver, reach out through <a href="https://maxweberman.com">maxweberman.com</a>. I'll show you how I handle payment paperwork from the first draw to final closeout.</p></div></details></div></article><article class="post card" id="pool-with-new-home"><div class="tags"><span class="tag new">New</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>Building a Pool with Your New Home: What to Plan Early</h3><p class="note">New post draft for maxweberman.com. Suggested slug: /blog/pool-with-new-home.</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>I'm building a custom home with a pool right now, and it's a good reminder of something I tell every owner who's thinking about one: the pool isn't an add-on. If you want it, it's part of the house, and it needs to be part of the plan from the start.</p>
+<p>Owners who wait until the house is done to think about the pool often find out that the best spot is blocked, the equipment has nowhere to go, or there's no easy way to get an excavator into the backyard anymore. Planning early avoids most of that. Here's what to think about, and when.</p>
+<h2>Decide Early, Even If You Build Later</h2>
+<p>The single best thing you can do is decide during design whether a pool is in the plan, even if you won't build it right away.</p>
+<p>If the pool is coming later, we can still prepare for it now:</p>
+<ul>
+<li><strong>Leave room for it</strong> on the site plan, with the setbacks and easements in mind.</li>
+<li><strong>Keep an access route open</strong> for excavation equipment and concrete trucks.</li>
+<li><strong>Run conduit and sleeves</strong> for future electrical, gas, and plumbing lines before the patio and landscaping go in.</li>
+<li><strong>Size the utilities</strong> so the electrical service and gas supply can handle the pool equipment later.</li>
+</ul>
+<p>These are small costs during construction. Trying to add them after the house is finished can mean cutting through new hardscape, trenching through new landscaping, or upgrading service you just paid for.</p>
+<h2>Site, Soil, and Placement</h2>
+<p>Where the pool goes affects everything else, so it's worth getting right.</p>
+<ul>
+<li><strong>Setbacks and easements:</strong> Your lot has rules about how close structures can be to property lines, utilities, and easements. A pool is usually included. We check these before anyone falls in love with a layout.</li>
+<li><strong>Soil and groundwater:</strong> What's under the ground affects excavation, the structure, and drainage. Your design team may recommend a soils evaluation before the pool is engineered.</li>
+<li><strong>Grading and drainage:</strong> The pool deck and the yard around it need to shed water away from the house and the pool. That gets designed with the overall grading plan, not afterward.</li>
+<li><strong>Sun, wind, and views:</strong> Think about where the sun hits in the afternoon, where you'll see the pool from inside the house, and how much privacy you want.</li>
+</ul>
+<h2>Sequencing with the House</h2>
+<p>The order of work matters a lot when a pool and a house are going up on the same site.</p>
+<ul>
+<li><strong>Excavation and access:</strong> Pool excavation needs heavy equipment and a route for hauling soil. Once the house, driveway, and hardscape are in, that route can get very tight. Planning the sequence keeps access open as long as it's needed.</li>
+<li><strong>Spoils:</strong> Excavated soil has to go somewhere. Sometimes some of it can be used for grading on site; sometimes it gets hauled away. We plan that early so it isn't sitting in the way of other trades.</li>
+<li><strong>Underground work:</strong> Plumbing, electrical, and gas runs to the pool need to be coordinated with the house's own underground utilities, so trenches are dug once.</li>
+<li><strong>Protecting finished work:</strong> Pool construction is messy. Concrete, plaster, and heavy equipment don't mix well with a finished patio or fresh landscaping. Good sequencing protects what's already built. That's part of why I keep a clean, organized jobsite.</li>
+<li><strong>Landscaping last:</strong> Final grading, hardscape, and planting around the pool usually come after the heavy pool work is done.</li>
+</ul>
+<h2>Michigan Weather Shapes the Schedule</h2>
+<p>In metro Detroit, the weather has a big say in when pool work happens. Excavation, concrete, and finish work all depend on conditions, and winter can stop some of it entirely.</p>
+<p>That affects how we plan:</p>
+<ul>
+<li><strong>Timing the pool work</strong> so the weather-sensitive steps land in the right season.</li>
+<li><strong>Planning for freeze protection.</strong> Pool plumbing and equipment need to be designed and installed with winterizing in mind, so they can be drained or protected when the pool is closed for the season.</li>
+<li><strong>Being realistic about the finish date.</strong> If the house is finishing in late fall, the pool may not be swimmable until the next season. It's better to know that up front.</li>
+</ul>
+<h2>Equipment, Utilities, and Safety</h2>
+<p>The pool's equipment needs a home, and it's easy to forget about until late in the design.</p>
+<ul>
+<li><strong>Equipment location:</strong> Pumps, filters, heaters, and controls need a spot that's accessible for service, reasonably close to the pool, and away from bedroom windows and outdoor living areas if noise is a concern.</li>
+<li><strong>Electrical:</strong> Pool equipment, lighting, and any automation need dedicated circuits, and pools have specific electrical safety requirements, including bonding and grounding. A licensed electrician and the inspector will make sure this is done right.</li>
+<li><strong>Gas or heat pump:</strong> If you want a heated pool, the heating method affects the gas line or electrical service size. Decide early so the utilities are sized for it.</li>
+<li><strong>Water and fill:</strong> Plan how the pool will be filled and where it can be drained when needed.</li>
+<li><strong>Barriers and covers:</strong> Local codes typically require safety barriers around pools, such as fencing, self-closing gates, or alarms. Your local building department sets the specific rules. Plan the fence and gates into the design so they look intentional.</li>
+<li><strong>Lighting and controls:</strong> Lighting, automation, and any water features are much easier to plan before the deck is poured.</li>
+</ul>
+<h2>Permits and Inspections</h2>
+<p>A pool usually has its own permits and inspections, separate from the house, and sometimes involves more than one department. Building those into the schedule early keeps the pool from holding up the certificate of occupancy for the house, or the house from holding up the pool. Your builder should know the local process and plan around it.</p>
+<h2>Budget the Pool Within the Whole Project</h2>
+<p>The pool shell is only part of the cost. When you budget for a pool, think about everything around it:</p>
+<ul>
+<li><strong>Deck and hardscape</strong></li>
+<li><strong>Fencing and gates</strong></li>
+<li><strong>Landscaping and grading around the pool</strong></li>
+<li><strong>Lighting, automation, and any water features</strong></li>
+<li><strong>Utility upgrades</strong> for electrical and gas</li>
+<li><strong>Pool house, outdoor kitchen, or shade structure,</strong> if they're in the plan</li>
+</ul>
+<p>Some of these items may be carried as allowances until you make selections. I cover how that works in <a href="https://maxweberman.com/blog/allowances-explained">Allowances Explained: Why Your Budget Moves</a>.</p>
+<p>On my jobs, the pool work is handled the same way as the rest of the house: a flat construction-management fee, real bids from pool and hardscape subs, and costs passed through at cost. We look at the bids together and value-engineer where it makes sense, for example by simplifying a deck detail or adjusting the equipment package, without giving up what you care about.</p>
+<p>If your house is being financed, ask your lender early whether the pool can be part of the construction loan. The answer affects how the pool is budgeted and drawn.</p>
+<h2>Illustrative Example</h2>
+<p>This is an illustrative scenario, not a real project.</p>
+<p>An owner designing a custom home wants a pool but isn't sure the budget allows it yet. During design, we reserve the pool location on the site plan, keep an equipment access route open on the side of the house, size the electrical and gas service for future pool equipment, and run sleeves under the patio for future lines. When the owner is ready to build the pool, the hard part is already done, and nobody has to tear out new hardscape to make it happen.</p>
+<h2>The Short Checklist</h2>
+<ul>
+<li>Decide during design whether a pool is in the plan.</li>
+<li>Check setbacks, easements, and soil before settling on a layout.</li>
+<li>Plan access and spoils before the house blocks the yard.</li>
+<li>Size electrical and gas service for pool equipment.</li>
+<li>Plan barriers and gates into the design.</li>
+<li>Schedule around Michigan weather.</li>
+<li>Budget for everything around the pool, not just the pool itself.</li>
+</ul>
+<h2>Planning a Home with a Pool?</h2>
+<p>If you're building a custom home in metro Detroit and a pool is on your list, now is the time to plan it. Reach out through <a href="https://maxweberman.com">maxweberman.com</a>, and let's talk about how to build it into your project from the start.</p></div></details></div></article><article class="post card" id="warranty-and-upkeep"><div class="tags"><span class="tag new">New</span><span class="tag st">Draft · Awaiting Max&#x27;s Review · Not Published</span></div>
+<h3>What Happens After Your Project Is Done: Warranty and Upkeep</h3><p class="note">New post draft for maxweberman.com. Suggested slug: /blog/warranty-and-upkeep.</p>
+<div class="acts"><details><summary class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Read Draft</summary><div class="body"><p>The last day of construction isn't the end of the project. It's the start of living in the house, or opening the doors of the restaurant. How a builder handles the handoff, the warranty, and the first year tells you a lot about how they built the job.</p>
+<p>Here's what to expect after the work is done, what your warranty does and doesn't cover, and how to take care of what you just built.</p>
+<p><em>This article is general information, not legal advice. Your warranty terms are set by your contract and by the manufacturers of the products in your project. Read them, and ask your attorney if you have questions.</em></p>
+<h2>Closeout: Finishing the Job Right</h2>
+<p>Before a project is truly done, a few things have to happen.</p>
+<ul>
+<li><strong>Final inspections.</strong> The local building department signs off, and for a new home or a restaurant, that usually leads to a certificate of occupancy or its equivalent.</li>
+<li><strong>Punch list.</strong> We walk the project together and list every item that still needs attention: a paint touch-up, a door that sticks, a missing cover plate. Those get fixed before closeout.</li>
+<li><strong>Final lien waivers.</strong> Before final payment and the release of retainage, every sub and supplier should provide a final waiver. I cover this in <a href="https://maxweberman.com/blog/lien-waivers-explained">Lien Waivers Explained</a>.</li>
+<li><strong>Final cost report.</strong> On my jobs, costs pass through at cost with a flat construction-management fee, so the final report shows what everything actually cost.</li>
+<li><strong>A clean handoff.</strong> I keep clean jobsites throughout the job, and the final cleaning matters most. You should walk into a space that's ready to use.</li>
+</ul>
+<h2>The Closeout Package</h2>
+<p>Every owner should get a closeout package at the end of the job. It's the owner's manual for your building. A good one includes:</p>
+<ul>
+<li><strong>Warranty documents</strong> from the builder and from manufacturers.</li>
+<li><strong>Product information:</strong> model numbers, finish names, paint colors, and where products were bought.</li>
+<li><strong>Operation and maintenance manuals</strong> for equipment such as HVAC, water heaters, appliances, and pool equipment.</li>
+<li><strong>Contact list</strong> of the subs who worked on major systems.</li>
+<li><strong>Permits and final inspection records.</strong></li>
+<li><strong>As-built notes or drawings,</strong> where available, showing where key lines and shutoffs are.</li>
+</ul>
+<p>Keep this somewhere you can find it. When something needs service in a few years, it's the first place you'll look.</p>
+<h2>Understanding Your Warranty</h2>
+<p>There are usually two kinds of warranty coverage on a project.</p>
+<h3>The Builder's Warranty</h3>
+<p>This covers the workmanship on your project, under the terms in your contract. The contract should say what's covered, for how long, how to report a problem, and how quickly it will be addressed. Read it before you sign, not after something goes wrong.</p>
+<h3>Manufacturer Warranties</h3>
+<p>Windows, roofing, appliances, mechanical equipment, fixtures, and many finishes come with their own manufacturer warranties. These are separate from the builder's warranty and have their own terms. Some require registration. Some require regular maintenance or professional service to stay valid. Your closeout package should include them.</p>
+<h3>What Warranties Usually Don't Cover</h3>
+<p>Every warranty has its own terms, but coverage commonly excludes:</p>
+<ul>
+<li><strong>Normal wear and tear.</strong></li>
+<li><strong>Damage from lack of maintenance,</strong> such as a clogged gutter that leads to water damage.</li>
+<li><strong>Changes made by others</strong> after the project was finished.</li>
+<li><strong>Normal material behavior.</strong> Wood moves, concrete can develop small cracks, and finishes age. Some of this is normal and expected. Your contract and your builder can help you tell the difference between normal behavior and a defect.</li>
+</ul>
+<h2>The First Year in a New Building</h2>
+<p>A new house or space goes through an adjustment period. Materials settle, wood adjusts to the indoor humidity, and the building goes through its first full set of seasons. In metro Detroit, those seasons are a real test.</p>
+<p>During that first year, it's normal to notice small things: a hairline crack in drywall, a door that needs adjusting, a squeak in the floor. Keep a running list. Report anything that seems like a real problem right away, especially water, electrical, or anything related to safety. For small items, check how your contract wants them reported. Batching small items together often makes repairs more efficient.</p>
+<p>Before your warranty period ends, it's worth doing a walkthrough to catch anything that should be addressed under warranty.</p>
+<h2>Upkeep: Taking Care of What You Built</h2>
+<p>A well-built project still needs care. Regular maintenance protects your investment and keeps manufacturer warranties valid. Here's a general checklist. Your manuals and service providers will have specifics for your systems.</p>
+<h3>Seasonal Checks</h3>
+<ul>
+<li><strong>Gutters and downspouts:</strong> Keep them clear, and make sure water drains away from the foundation.</li>
+<li><strong>HVAC:</strong> Change filters on the schedule in your manual, and have the system serviced regularly.</li>
+<li><strong>Exterior sealants and caulk:</strong> Inspect around windows, doors, and penetrations, and reseal where needed.</li>
+<li><strong>Roof:</strong> Look for damaged or missing materials, especially after storms.</li>
+<li><strong>Grading:</strong> Check that soil and mulch haven't built up against the siding or blocked drainage.</li>
+</ul>
+<h3>Michigan Winter Prep</h3>
+<ul>
+<li><strong>Exterior water lines:</strong> Shut off and drain hose bibs if your fixtures require it.</li>
+<li><strong>Pool:</strong> If you have one, close it properly for the season so the plumbing and equipment are protected from freezing.</li>
+<li><strong>Snow and ice:</strong> Keep snow away from vents and equipment, and watch for ice building up at the roof edges.</li>
+<li><strong>Heating system:</strong> Have it checked before the cold sets in.</li>
+</ul>
+<h3>Interior Care</h3>
+<ul>
+<li><strong>Finishes:</strong> Follow the care instructions for your floors, countertops, and cabinetry. Some materials need sealing on a schedule.</li>
+<li><strong>Plumbing:</strong> Know where your main shutoff is. Check under sinks for leaks.</li>
+<li><strong>Safety devices:</strong> Test smoke and carbon monoxide detectors, and replace batteries as recommended.</li>
+</ul>
+<h3>For Restaurant Owners</h3>
+<p>Commercial kitchens are hard on a building. Keep up with service on kitchen equipment, hoods, grease management, and HVAC as your equipment manufacturers and local requirements call for. Keep service records. They help with warranties and inspections.</p>
+<h2>Illustrative Example</h2>
+<p>This is an illustrative scenario, not a real project.</p>
+<p>An owner moves into a new custom home in the fall. Over the winter, they notice a couple of drywall cracks near a stairwell and a cabinet door that's out of alignment. They add both to a list and report them together as the contract describes. Before the warranty period ends, they schedule a walkthrough, the items are addressed, and the owner files the service records with their closeout package.</p>
+<h2>A Builder Who Stays Reachable</h2>
+<p>A warranty is only as good as the builder behind it. Before you hire anyone, ask how they handle warranty requests: who you call, how fast they respond, and what the process looks like. Ask what's in their closeout package. The answers will tell you how they think about the job after the last invoice is paid.</p>
+<p>I'd rather hear about a small issue early than a big one later. Reaching out about something small is never a bother.</p>
+<h2>Let's Build Something That Lasts</h2>
+<p>If you're planning a custom home or a restaurant build-out in metro Detroit, reach out through <a href="https://maxweberman.com">maxweberman.com</a>. I'll walk you through how I build, how I close out a job, and how I stand behind the work after it's done.</p></div></details></div></article></div>
+<h2><svg class="ic pop" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.5M4 12h.5M4 18h.5"/></svg>Topic Queue</h2><div class="card">10 topics plus 6 writing-style questions are with the Branding Agent for Max&#x27;s quiz.</div>
+<h2><svg class="ic pop2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c1 1 1 2 1 2.5h6c0-.5 0-1.5 1-2.5A6 6 0 0 0 12 3z"/></svg>Parked Idea</h2><div class="card">A TED talk or post making a plea to expats to follow Thailand&#x27;s rules, and to the Thai government to give them a clear path.</div>
+<h2><svg class="ic okc" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.5M4 12h.5M4 18h.5"/></svg>Recent Work</h2><ul><li>Rewrote the 4 existing maxweberman.com articles</li><li>Drafted 6 new posts</li><li>Built review PDFs for both sets</li><li>Sent the topic queue and style questions to the Branding Agent</li><li>Launched this dashboard</li></ul>
+<footer><a class="mw-hover" href="https://maxweberman.com" target="_blank" rel="noopener">Built by Max Weberman</a></footer></div>
+<div class="bar"><button id="share" class="btn mw-hover"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4M8.2 13l7.6 4"/></svg>Share</button></div>
+<script>document.getElementById('share').onclick=async e=>{const url=location.href,text='Blog dashboard: 10 drafts awaiting review, 3 open checks.';
+if(navigator.share){try{await navigator.share({title:'Blog Dashboard',text,url});return}catch(x){if(x.name==='AbortError')return}}
+try{await navigator.clipboard.writeText(text+' '+url);const b=e.currentTarget||document.getElementById('share');b.lastChild.textContent='Copied';setTimeout(()=>b.lastChild.textContent='Share',1600)}catch(x){location.href='sms:?&body='+encodeURIComponent(text+' '+url)}};</script>
+</body></html>
