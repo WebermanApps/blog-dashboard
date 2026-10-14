@@ -1,6 +1,14 @@
 {
  "agent": "blog",
- "updated": "2026-10-14T19:35+07:00",
+ "updated": "2026-10-14T19:49+07:00",
+ "pinned": [
+  {
+   "name": "Flat Fee & Lagoon Deck",
+   "url": "https://webermanapps.github.io/style-swipe/?date=flat-fee-and-lagoon",
+   "total": 25,
+   "answered": 0
+  }
+ ],
  "decks": [
   {
    "id": "topic-picks",
