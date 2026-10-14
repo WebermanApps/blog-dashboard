@@ -1,0 +1,37 @@
+{
+ "agent": "blog",
+ "categories": [
+  {
+   "id": "topics",
+   "label": "Topic Picks",
+   "blurb": "Which proposed client blog topics to write next"
+  },
+  {
+   "id": "drafts",
+   "label": "Draft Feedback",
+   "blurb": "Keep, tighten or cut sections of the 10 drafts and 4 rewrites"
+  },
+  {
+   "id": "checks",
+   "label": "Open Checks",
+   "blurb": "Quick answers to the open checks in the drafts"
+  },
+  {
+   "id": "style",
+   "label": "Writing Style",
+   "blurb": "Open writing-style questions for the posts"
+  }
+ ],
+ "unfinished": [],
+ "ready": {
+  "name": "Blog Deck 1",
+  "url": "deck/?d=blog-1",
+  "total": 20,
+  "categories": [
+   "Topic Picks",
+   "Draft Feedback",
+   "Open Checks",
+   "Writing Style"
+  ]
+ }
+}

@@ -1,0 +1,224 @@
+{
+ "id": "blog-1",
+ "name": "Blog Deck 1",
+ "agent": "blog",
+ "total": 20,
+ "cards": [
+  {
+   "id": "t15449004f9",
+   "cat": "topics",
+   "ctx": "Proposed topic",
+   "q": "What a Clean Jobsite Says About Your Builder",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "tb829c889c4",
+   "cat": "topics",
+   "ctx": "Proposed topic",
+   "q": "How You Can See Your Jobsite Anytime",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "tc3dcf6f8fa",
+   "cat": "topics",
+   "ctx": "Proposed topic",
+   "q": "Value Engineering Without Cutting Corners",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "t511b6c6f98",
+   "cat": "topics",
+   "ctx": "Proposed topic",
+   "q": "What Drives the Cost of a Custom Home",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "te027cbc38f",
+   "cat": "topics",
+   "ctx": "Proposed topic",
+   "q": "Permits and Inspections: What Owners Should Expect",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "db4ca426d6f",
+   "cat": "drafts",
+   "ctx": "Real Sub Bids vs. Padded Estimates",
+   "q": "Section \"What a Padded Estimate Looks Like\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "dbacdbc2cbe",
+   "cat": "drafts",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "Section \"What a Change Order Is\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "dee8d450c8c",
+   "cat": "drafts",
+   "ctx": "How to Pick a Builder: Questions to Ask Before You Sign",
+   "q": "Section \"Step 1: Check the Basics First\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "db328b28c18",
+   "cat": "drafts",
+   "ctx": "Planning a Custom Home: The First Five Decisions",
+   "q": "Section \"1. Set a Real Budget, Including the Parts People Forget\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d9cba3392d3",
+   "cat": "drafts",
+   "ctx": "Why I Charge a Flat Fee Instead of a Percentage",
+   "q": "Section \"The Problem with a Percentage\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "c0c2de58ec4",
+   "cat": "checks",
+   "ctx": "Understanding Actual Cash Value And Replacement Cost Value In Property Insurance Claims",
+   "q": "Confirm what the company can legally do for owners on Michigan insurance claims",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line From The Post",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "c317ed90f07",
+   "cat": "checks",
+   "ctx": "Real Sub Bids vs. Padded Estimates",
+   "q": "How many bids you typically get per major trade",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line From The Post",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "c07ef48bc43",
+   "cat": "checks",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "Change-order terms in your standard contract",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line From The Post",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "cf44dc9425a",
+   "cat": "checks",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "How your flat fee handles a large scope change",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line From The Post",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "ca075140968",
+   "cat": "checks",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "Whether owners can view the job cameras",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line From The Post",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "s87158714ba",
+   "cat": "style",
+   "ctx": "Writing style",
+   "q": "First person \"I\" or company \"We\" in the posts?",
+   "opts": [
+    "I",
+    "We"
+   ]
+  },
+  {
+   "id": "s1cce7ad12e",
+   "cat": "style",
+   "ctx": "Writing style",
+   "q": "Headings in Title Case or Sentence case?",
+   "opts": [
+    "Title Case",
+    "Sentence Case"
+   ]
+  },
+  {
+   "id": "s3f22af69a7",
+   "cat": "style",
+   "ctx": "Writing style",
+   "q": "Lead with a photo or with the headline and text?",
+   "opts": [
+    "Photo First",
+    "Headline First"
+   ]
+  },
+  {
+   "id": "sa9bc5b3ee6",
+   "cat": "style",
+   "ctx": "Writing style",
+   "q": "Keep the \"Let's Talk About Your Project\" closing on every post?",
+   "opts": [
+    "Keep",
+    "Change It"
+   ]
+  },
+  {
+   "id": "sca4a4375e9",
+   "cat": "style",
+   "ctx": "Writing style",
+   "q": "Keep the short \"general information, not legal advice\" line near the end?",
+   "opts": [
+    "Keep",
+    "Drop It"
+   ]
+  }
+ ],
+ "built": "2026-10-14T14:48+07:00"
+}
