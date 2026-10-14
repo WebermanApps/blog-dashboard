@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14 19:49 ICT",
+ "updated": "2026-10-14 20:06 ICT",
  "routines": [
   {
    "name": "Blog Morning Report",
@@ -11,8 +11,8 @@
   {
    "name": "Blog Evening Report",
    "group": "Reports",
-   "schedule_plain": "Daily At 6:00 PM ICT",
-   "status": "on",
+   "schedule_plain": "Daily At 6:00 PM ICT (Retired Oct 14)",
+   "status": "paused",
    "last_run": "Oct 14 6:02 PM"
   }
  ]

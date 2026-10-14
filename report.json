@@ -1,8 +1,8 @@
 {
  "agent": "Blog",
- "type": "evening",
+ "type": "morning",
  "date": "Wed, Oct 14, 2026",
- "posted_at": "2026-10-14T18:02+07:00",
- "due": "2026-10-14T18:00+07:00",
+ "posted_at": "2026-10-14T04:52+07:00",
+ "due": "2026-10-14T05:00+07:00",
  "late": false
 }
