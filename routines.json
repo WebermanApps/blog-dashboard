@@ -1,0 +1,19 @@
+{
+ "updated": "2026-10-14 14:18 ICT",
+ "routines": [
+  {
+   "name": "Blog Morning Report",
+   "group": "Reports",
+   "schedule_plain": "Daily At 4:47 AM ICT",
+   "status": "on",
+   "last_run": "Oct 14 4:52 AM"
+  },
+  {
+   "name": "Blog Evening Report",
+   "group": "Reports",
+   "schedule_plain": "Daily At 6:00 PM ICT",
+   "status": "on",
+   "last_run": "Oct 13 6:08 PM"
+  }
+ ]
+}
