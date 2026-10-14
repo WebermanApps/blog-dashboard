@@ -1,0 +1,226 @@
+{
+ "id": "open-checks",
+ "name": "Open Checks Deck",
+ "agent": "blog",
+ "total": 20,
+ "cards": [
+  {
+   "id": "o9c0b064801",
+   "deck": "open-checks",
+   "ctx": "Understanding Actual Cash Value And Replacement Cost Value In Property Insurance Claims",
+   "q": "Confirm what the company can legally do for owners on Michigan insurance claims",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "o6ee4e172fe",
+   "deck": "open-checks",
+   "ctx": "Real Sub Bids vs. Padded Estimates",
+   "q": "How many bids you typically get per major trade",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "o2b9fb05c23",
+   "deck": "open-checks",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "Change-order terms in your standard contract",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "o88e1450c77",
+   "deck": "open-checks",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "How your flat fee handles a large scope change",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "o9ac1be536a",
+   "deck": "open-checks",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "Whether owners can view the job cameras",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "oe7c6990f0d",
+   "deck": "open-checks",
+   "ctx": "How to Pick a Builder: Questions to Ask Before You Sign",
+   "q": "Which Michigan licensing check to point readers to",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "od667cf069b",
+   "deck": "open-checks",
+   "ctx": "How to Pick a Builder: Questions to Ask Before You Sign",
+   "q": "Which insurance certificates you give owners",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "o14bb79cc69",
+   "deck": "open-checks",
+   "ctx": "How to Pick a Builder: Questions to Ask Before You Sign",
+   "q": "Owner camera access and how often you send updates",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "oc1a031d6ff",
+   "deck": "open-checks",
+   "ctx": "How to Pick a Builder: Questions to Ask Before You Sign",
+   "q": "Whether to say anything specific about deposits",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "oe40a7b66f5",
+   "deck": "open-checks",
+   "ctx": "Planning a Custom Home: The First Five Decisions",
+   "q": "Give a general contingency range, or leave it unstated?",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "o8e69b0d8d1",
+   "deck": "open-checks",
+   "ctx": "Lien Waivers Explained",
+   "q": "Attorney check: Attorney check of the \"sworn statement\" wording. Send it for review?",
+   "opts": [
+    "Yes, Send It",
+    "Skip That Check"
+   ]
+  },
+  {
+   "id": "odf1bfde704",
+   "deck": "open-checks",
+   "ctx": "What Happens After Your Project Is Done: Warranty and Upkeep",
+   "q": "Send your warranty terms",
+   "opts": [
+    "Answered In Notes",
+    "Cut That Line",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "o0514fbb4a2",
+   "deck": "open-checks",
+   "ctx": "Rewrite of a live post",
+   "q": "OK to replace the live post with this rewrite: \"How To Structure A Construction Contract: A Guide For Every Type Of Owner\"?",
+   "opts": [
+    "OK To Publish",
+    "Needs Edits",
+    "Not Yet"
+   ]
+  },
+  {
+   "id": "o2ae065699f",
+   "deck": "open-checks",
+   "ctx": "Rewrite of a live post",
+   "q": "OK to replace the live post with this rewrite: \"Understanding Actual Cash Value And Replacement Cost Value In Property Insurance Claims\"?",
+   "opts": [
+    "OK To Publish",
+    "Needs Edits",
+    "Not Yet"
+   ]
+  },
+  {
+   "id": "o756f25eace",
+   "deck": "open-checks",
+   "ctx": "Rewrite of a live post",
+   "q": "OK to replace the live post with this rewrite: \"Ordering Kitchen Cabinetry: Where To Begin\"?",
+   "opts": [
+    "OK To Publish",
+    "Needs Edits",
+    "Not Yet"
+   ]
+  },
+  {
+   "id": "o36b9dc81f7",
+   "deck": "open-checks",
+   "ctx": "Rewrite of a live post",
+   "q": "OK to replace the live post with this rewrite: \"Filing A Property Insurance Claim? Three Things That Decide Your Payout\"?",
+   "opts": [
+    "OK To Publish",
+    "Needs Edits",
+    "Not Yet"
+   ]
+  },
+  {
+   "id": "o81291b4179",
+   "deck": "open-checks",
+   "ctx": "How To Structure A Construction Contract: A Guide For Every Type Of Owner",
+   "q": "Change the address to /blog/construction-contract-structures (old URL redirects)?",
+   "opts": [
+    "Change It",
+    "Keep Current"
+   ]
+  },
+  {
+   "id": "o033910a126",
+   "deck": "open-checks",
+   "ctx": "Filing A Property Insurance Claim? Three Things That Decide Your Payout",
+   "q": "Change the address to /blog/fair-insurance-claim-payout (old URL redirects)?",
+   "opts": [
+    "Change It",
+    "Keep Current"
+   ]
+  },
+  {
+   "id": "o366a55fe99",
+   "deck": "open-checks",
+   "ctx": "Ordering Kitchen Cabinetry: Where To Begin",
+   "q": "Photo needed: Finished custom kitchen from the portfolio, wide shot showing the full cabinet run. Do you have one?",
+   "opts": [
+    "I Have One",
+    "No Photo, Cut The Spot",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "o62d088af71",
+   "deck": "open-checks",
+   "ctx": "Ordering Kitchen Cabinetry: Where To Begin",
+   "q": "Photo needed: Close-up of a simple full-overlay door in stained maple. Do you have one?",
+   "opts": [
+    "I Have One",
+    "No Photo, Cut The Spot",
+    "Ask Me Later"
+   ]
+  }
+ ],
+ "built": "2026-10-14T19:35+07:00"
+}

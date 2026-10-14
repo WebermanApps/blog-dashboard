@@ -1,0 +1,38 @@
+{
+ "agent": "blog",
+ "updated": "2026-10-14T19:35+07:00",
+ "decks": [
+  {
+   "id": "topic-picks",
+   "name": "Topic Picks Deck",
+   "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=topic-picks",
+   "total": 20,
+   "topic": "topic-picks",
+   "blurb": "Which client topics to write next, and which drafts go first"
+  },
+  {
+   "id": "draft-feedback",
+   "name": "Draft Feedback Deck",
+   "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=draft-feedback",
+   "total": 20,
+   "topic": "draft-feedback",
+   "blurb": "Keep, tighten or cut sections of the drafts and rewrites"
+  },
+  {
+   "id": "open-checks",
+   "name": "Open Checks Deck",
+   "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=open-checks",
+   "total": 20,
+   "topic": "open-checks",
+   "blurb": "Quick answers and OKs the drafts are waiting on"
+  },
+  {
+   "id": "writing-style",
+   "name": "Writing Style Deck",
+   "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=writing-style",
+   "total": 20,
+   "topic": "writing-style",
+   "blurb": "How the posts should read and look"
+  }
+ ]
+}

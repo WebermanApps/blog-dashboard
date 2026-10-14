@@ -1,0 +1,228 @@
+{
+ "id": "topic-picks",
+ "name": "Topic Picks Deck",
+ "agent": "blog",
+ "total": 20,
+ "cards": [
+  {
+   "id": "te893682653",
+   "deck": "topic-picks",
+   "ctx": "Proposed topic",
+   "q": "What a Clean Jobsite Says About Your Builder",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "t079ce5d575",
+   "deck": "topic-picks",
+   "ctx": "Proposed topic",
+   "q": "How You Can See Your Jobsite Anytime",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "tc2b3c7ffdf",
+   "deck": "topic-picks",
+   "ctx": "Proposed topic",
+   "q": "Value Engineering Without Cutting Corners",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "t0c5ca05c8f",
+   "deck": "topic-picks",
+   "ctx": "Proposed topic",
+   "q": "What Drives the Cost of a Custom Home",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "tff7dee560b",
+   "deck": "topic-picks",
+   "ctx": "Proposed topic",
+   "q": "Permits and Inspections: What Owners Should Expect",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "t3d7be5e747",
+   "deck": "topic-picks",
+   "ctx": "Proposed topic",
+   "q": "Restaurant Build-Out Timelines: Where the Delays Hide",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "tcb3c3fa1d9",
+   "deck": "topic-picks",
+   "ctx": "Proposed topic",
+   "q": "Contingency: How Much Cushion Your Budget Needs",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "t84f460d5ba",
+   "deck": "topic-picks",
+   "ctx": "Proposed topic",
+   "q": "Remodel or Rebuild? How to Decide",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "t51c8f99f23",
+   "deck": "topic-picks",
+   "ctx": "Proposed topic",
+   "q": "Kitchen Design Choices That Change Your Budget Most",
+   "opts": [
+    "Write Next",
+    "Later",
+    "Not Now"
+   ]
+  },
+  {
+   "id": "tb8e19107bf",
+   "deck": "topic-picks",
+   "ctx": "Parked idea",
+   "q": "Expats in Thailand: Don't Dodge the Rules",
+   "opts": [
+    "Write It",
+    "Keep Parked",
+    "Drop It"
+   ]
+  },
+  {
+   "id": "ta183154fb5",
+   "deck": "topic-picks",
+   "ctx": "Set to Not Now on Oct 13",
+   "q": "What Restaurant Owners Should Know Before a Build-Out",
+   "opts": [
+    "Still Not Now",
+    "Write It"
+   ]
+  },
+  {
+   "id": "t3cb20cbe85",
+   "deck": "topic-picks",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"Real Sub Bids vs. Padded Estimates\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  },
+  {
+   "id": "t34e6b91ce7",
+   "deck": "topic-picks",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"How Change Orders Should Work (and Why They Cause Fights)\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  },
+  {
+   "id": "t382c2c5145",
+   "deck": "topic-picks",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"How to Pick a Builder: Questions to Ask Before You Sign\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  },
+  {
+   "id": "t5c12a57398",
+   "deck": "topic-picks",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"Planning a Custom Home: The First Five Decisions\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  },
+  {
+   "id": "t02db92fd2f",
+   "deck": "topic-picks",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"Why I Charge a Flat Fee Instead of a Percentage\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  },
+  {
+   "id": "t73de3eece6",
+   "deck": "topic-picks",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"Allowances Explained: Why Your Budget Moves\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  },
+  {
+   "id": "t1ce0ab85e5",
+   "deck": "topic-picks",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"Building a Pool with Your New Home: What to Plan Early\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  },
+  {
+   "id": "tc63b04d145",
+   "deck": "topic-picks",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"Lien Waivers Explained\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  },
+  {
+   "id": "tc64ace6eb9",
+   "deck": "topic-picks",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"Construction Loans and Draws, Explained for Owners\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  }
+ ],
+ "built": "2026-10-14T19:35+07:00"
+}

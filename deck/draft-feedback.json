@@ -1,0 +1,229 @@
+{
+ "id": "draft-feedback",
+ "name": "Draft Feedback Deck",
+ "agent": "blog",
+ "total": 20,
+ "cards": [
+  {
+   "id": "d7881945874",
+   "deck": "draft-feedback",
+   "ctx": "Real Sub Bids vs. Padded Estimates",
+   "q": "Section \"What a Padded Estimate Looks Like\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d7c10098f07",
+   "deck": "draft-feedback",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "Section \"What a Change Order Is\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d1885675699",
+   "deck": "draft-feedback",
+   "ctx": "How to Pick a Builder: Questions to Ask Before You Sign",
+   "q": "Section \"Step 1: Check the Basics First\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d9fe6dcbf82",
+   "deck": "draft-feedback",
+   "ctx": "Planning a Custom Home: The First Five Decisions",
+   "q": "Section \"1. Set a Real Budget, Including the Parts People Forget\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d39d8379fd0",
+   "deck": "draft-feedback",
+   "ctx": "Why I Charge a Flat Fee Instead of a Percentage",
+   "q": "Section \"The Problem with a Percentage\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "df73bce73bd",
+   "deck": "draft-feedback",
+   "ctx": "Allowances Explained: Why Your Budget Moves",
+   "q": "Section \"What an Allowance Is\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "ddc34438762",
+   "deck": "draft-feedback",
+   "ctx": "Building a Pool with Your New Home: What to Plan Early",
+   "q": "Section \"Decide Early, Even If You Build Later\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "dc11264449a",
+   "deck": "draft-feedback",
+   "ctx": "Lien Waivers Explained",
+   "q": "Section \"First, What Is a Lien?\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d20bc5dbbf1",
+   "deck": "draft-feedback",
+   "ctx": "Construction Loans and Draws, Explained for Owners",
+   "q": "Section \"Don't Rule Yourself Out\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "da6c5311335",
+   "deck": "draft-feedback",
+   "ctx": "What Happens After Your Project Is Done: Warranty and Upkeep",
+   "q": "Section \"Closeout: Finishing the Job Right\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "dac3c873583",
+   "deck": "draft-feedback",
+   "ctx": "How To Structure A Construction Contract: A Guide For Every Type Of Owner",
+   "q": "Section \"Start With What Matters Most To You\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "dbc0e08360d",
+   "deck": "draft-feedback",
+   "ctx": "Understanding Actual Cash Value And Replacement Cost Value In Property Insurance Claims",
+   "q": "Section \"Definitions\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d9e31223ad2",
+   "deck": "draft-feedback",
+   "ctx": "Ordering Kitchen Cabinetry: Where To Begin",
+   "q": "Section \"Cabinet Components\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "dd159e98461",
+   "deck": "draft-feedback",
+   "ctx": "Filing A Property Insurance Claim? Three Things That Decide Your Payout",
+   "q": "Section \"1. The Building Process: Every Step Counts\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d67b0c37d11",
+   "deck": "draft-feedback",
+   "ctx": "Real Sub Bids vs. Padded Estimates",
+   "q": "Section \"What a Real Sub Bid Is\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d0b29e16f7b",
+   "deck": "draft-feedback",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "Section \"Why Change Orders Turn Into Fights\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "db1fa389d39",
+   "deck": "draft-feedback",
+   "ctx": "How to Pick a Builder: Questions to Ask Before You Sign",
+   "q": "Section \"Step 2: Ask How They Get Paid\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d2338ea4fba",
+   "deck": "draft-feedback",
+   "ctx": "Planning a Custom Home: The First Five Decisions",
+   "q": "Section \"2. Choose the Site, and Understand It\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d03cc6ed910",
+   "deck": "draft-feedback",
+   "ctx": "Why I Charge a Flat Fee Instead of a Percentage",
+   "q": "Section \"What a Flat Fee Changes\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "d7459039ddb",
+   "deck": "draft-feedback",
+   "ctx": "Allowances Explained: Why Your Budget Moves",
+   "q": "Section \"Why Allowances Are a Necessary Part of the Contract\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  }
+ ],
+ "built": "2026-10-14T19:35+07:00"
+}

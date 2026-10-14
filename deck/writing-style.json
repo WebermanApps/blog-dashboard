@@ -1,0 +1,213 @@
+{
+ "id": "writing-style",
+ "name": "Writing Style Deck",
+ "agent": "blog",
+ "total": 20,
+ "cards": [
+  {
+   "id": "wda3a0d45c2",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Write as \"I\" (you) or \"We\" (the company)? The new drafts use \"I\".",
+   "opts": [
+    "I",
+    "We"
+   ]
+  },
+  {
+   "id": "w374d8d6461",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Section headings in Title Case or Sentence case?",
+   "opts": [
+    "Title Case",
+    "Sentence Case"
+   ]
+  },
+  {
+   "id": "w82337901ae",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Open each post on a big photo, or on the headline and first paragraph?",
+   "opts": [
+    "Photo First",
+    "Headline First"
+   ]
+  },
+  {
+   "id": "w7bf0d86354",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Titles: capitalize every word (\"A Guide For Every Type Of Owner\") or keep small words lowercase (\"Planning a Custom Home\")?",
+   "opts": [
+    "Capitalize Every Word",
+    "Small Words Lowercase"
+   ]
+  },
+  {
+   "id": "wa475b2e4a8",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Keep the \"Let's Talk About Your Project\" closing on every post?",
+   "opts": [
+    "Keep",
+    "Change It"
+   ]
+  },
+  {
+   "id": "w9405460bc8",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Keep the short \"general information, not legal advice\" line near the end?",
+   "opts": [
+    "Keep",
+    "Drop It"
+   ]
+  },
+  {
+   "id": "we2f704515b",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Keep the \"Illustrative Example\" sections (allowances, loans, pool, warranty posts)?",
+   "opts": [
+    "Keep",
+    "Cut Them"
+   ]
+  },
+  {
+   "id": "w9112317952",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Link to your other posts inside the text, as the drafts do now?",
+   "opts": [
+    "Keep",
+    "Fewer Links"
+   ]
+  },
+  {
+   "id": "w99eabafe6b",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Bold lead-ins at the start of bullet points: keep them?",
+   "opts": [
+    "Keep",
+    "Plain Bullets"
+   ]
+  },
+  {
+   "id": "w70b4ce3519",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Use \"Questions to Ask\" checklists (as in Real Sub Bids and Pick a Builder) in more posts?",
+   "opts": [
+    "More Posts",
+    "Just These",
+    "Fewer"
+   ]
+  },
+  {
+   "id": "w19ee4728d6",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Use a \"Red Flags\" list (as in Pick a Builder) in more posts?",
+   "opts": [
+    "More Posts",
+    "Just This One"
+   ]
+  },
+  {
+   "id": "w77c5fb930d",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "The four newest posts run about 770 to 1,030 words. Keep that length?",
+   "opts": [
+    "Keep",
+    "Shorter",
+    "Longer"
+   ]
+  },
+  {
+   "id": "w329975097d",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "\"Explained\" titles (Lien Waivers Explained, Allowances Explained): keep using them?",
+   "opts": [
+    "Keep",
+    "Avoid"
+   ]
+  },
+  {
+   "id": "wa59049dccc",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Question titles (\"Filing A Property Insurance Claim? ...\"): keep using them?",
+   "opts": [
+    "Keep",
+    "Avoid"
+   ]
+  },
+  {
+   "id": "w1fd84e8642",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Titles with a parenthetical, like \"(and Why They Cause Fights)\": keep?",
+   "opts": [
+    "Keep",
+    "Avoid"
+   ]
+  },
+  {
+   "id": "w1f2ffc1647",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Mention metro Detroit in the closing of each post?",
+   "opts": [
+    "Keep",
+    "Drop It"
+   ]
+  },
+  {
+   "id": "w357695d4e3",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Michigan-specific sections (Michigan weather, Michigan statutory forms): add more?",
+   "opts": [
+    "More",
+    "As Is",
+    "Fewer"
+   ]
+  },
+  {
+   "id": "w7868604849",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Mention your remote job cameras in more posts (now in Change Orders and Pick a Builder)?",
+   "opts": [
+    "More Posts",
+    "Just These",
+    "Remove"
+   ]
+  },
+  {
+   "id": "w33e67a3219",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "Mention clean jobsites in more posts (now in Flat Fee and Pick a Builder)?",
+   "opts": [
+    "More Posts",
+    "Just These"
+   ]
+  },
+  {
+   "id": "w3db9a31381",
+   "deck": "writing-style",
+   "ctx": "Writing style",
+   "q": "The [PHOTO] spots in the drafts: use real job photos, or publish without photos?",
+   "opts": [
+    "Real Job Photos",
+    "Text Only"
+   ]
+  }
+ ],
+ "built": "2026-10-14T19:35+07:00"
+}
