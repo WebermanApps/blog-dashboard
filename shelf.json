@@ -1,14 +1,7 @@
 {
  "agent": "blog",
- "updated": "2026-10-15T14:51+07:00",
- "pinned": [
-  {
-   "name": "Flat Fee & Lagoon Deck",
-   "url": "https://webermanapps.github.io/style-swipe/?date=flat-fee-and-lagoon",
-   "total": 25,
-   "answered": 0
-  }
- ],
+ "updated": "2026-10-15T23:39+07:00",
+ "pinned": [],
  "decks": [
   {
    "id": "topic-picks",
@@ -41,6 +34,14 @@
    "total": 20,
    "topic": "writing-style",
    "blurb": "How the posts should read and look"
+  },
+  {
+   "id": "blog-decisions",
+   "name": "Blog Decisions Deck",
+   "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=blog-decisions",
+   "total": 20,
+   "topic": "blog-decisions",
+   "blurb": "Lead images, voice, photos and draft sections still open"
   }
  ]
 }

@@ -1,0 +1,225 @@
+{
+ "id": "blog-decisions",
+ "name": "Blog Decisions Deck",
+ "agent": "blog",
+ "total": 20,
+ "cards": [
+  {
+   "id": "b852ae0484e",
+   "deck": "blog-decisions",
+   "ctx": "From Flat Fee & Lagoon Deck, Flat Fee post",
+   "q": "Flat Fee post: lead with a contract on a clipboard, or a simple \"One Price\" type graphic?",
+   "opts": [
+    "Clipboard On Site",
+    "Type Graphic"
+   ]
+  },
+  {
+   "id": "b8c0a9c661f",
+   "deck": "blog-decisions",
+   "ctx": "From Flat Fee & Lagoon Deck, writing style",
+   "q": "Head to head: big photo first then headline, or headline and summary first then photo?",
+   "opts": [
+    "Photo First",
+    "Headline First"
+   ]
+  },
+  {
+   "id": "b4031d204d3",
+   "deck": "blog-decisions",
+   "ctx": "From Flat Fee & Lagoon Deck, writing style",
+   "q": "Whose voice in advice posts: you (\"I tell every client to ask for the bid sheet\") or the firm (\"At Weberman Construction, we share every bid\")?",
+   "opts": [
+    "Max Speaking",
+    "The Firm Speaking"
+   ]
+  },
+  {
+   "id": "b79c734e09a",
+   "deck": "blog-decisions",
+   "ctx": "From Flat Fee & Lagoon Deck, writing style",
+   "q": "Section headings: Title Case (\"How Draws Work\") or Sentence case (\"How draws work\")?",
+   "opts": [
+    "Title Case",
+    "Sentence Case"
+   ]
+  },
+  {
+   "id": "be0cb3fe0eb",
+   "deck": "blog-decisions",
+   "ctx": "Publish order, new draft",
+   "q": "When should \"What Happens After Your Project Is Done: Warranty and Upkeep\" go live?",
+   "opts": [
+    "First Batch",
+    "Later",
+    "Needs Work First"
+   ]
+  },
+  {
+   "id": "bce180a01b0",
+   "deck": "blog-decisions",
+   "ctx": "Real Sub Bids vs. Padded Estimates",
+   "q": "Photo needed: Bid comparison sheet on the table during a client meeting. Do you have one?",
+   "opts": [
+    "I Have One",
+    "No Photo, Cut The Spot",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "ba8e786283e",
+   "deck": "blog-decisions",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "Photo needed: Hidden condition uncovered during demo, documented for the owner. Do you have one?",
+   "opts": [
+    "I Have One",
+    "No Photo, Cut The Spot",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "b25adc814c3",
+   "deck": "blog-decisions",
+   "ctx": "How to Pick a Builder: Questions to Ask Before You Sign",
+   "q": "Photo needed: Clean, organized active jobsite. Do you have one?",
+   "opts": [
+    "I Have One",
+    "No Photo, Cut The Spot",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "bcb7da7d4e3",
+   "deck": "blog-decisions",
+   "ctx": "Planning a Custom Home: The First Five Decisions",
+   "q": "Photo needed: Floor plan markup from an early design meeting. Do you have one?",
+   "opts": [
+    "I Have One",
+    "No Photo, Cut The Spot",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "b9845dd3dc6",
+   "deck": "blog-decisions",
+   "ctx": "Ordering Kitchen Cabinetry: Where To Begin",
+   "q": "Photo needed: Island or peninsula showing a finished exposed end or back. Do you have one?",
+   "opts": [
+    "I Have One",
+    "No Photo, Cut The Spot",
+    "Ask Me Later"
+   ]
+  },
+  {
+   "id": "b40138d7182",
+   "deck": "blog-decisions",
+   "ctx": "How To Structure A Construction Contract: A Guide For Every Type Of Owner",
+   "q": "Section \"The Honest Downsides Of A Flat Fee\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "b48e8db9f44",
+   "deck": "blog-decisions",
+   "ctx": "How Change Orders Should Work (and Why They Cause Fights)",
+   "q": "Section \"How Remote Cameras Help\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "b47eec64728",
+   "deck": "blog-decisions",
+   "ctx": "Why I Charge a Flat Fee Instead of a Percentage",
+   "q": "Section \"Clean Jobsites Are Part of the Deal\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "b19a898b471",
+   "deck": "blog-decisions",
+   "ctx": "Building a Pool with Your New Home: What to Plan Early",
+   "q": "Section \"Michigan Weather Shapes the Schedule\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "b8ce24ee5aa",
+   "deck": "blog-decisions",
+   "ctx": "Allowances Explained: Why Your Budget Moves",
+   "q": "Section \"Illustrative Example\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "b1b0e65b0ee",
+   "deck": "blog-decisions",
+   "ctx": "Filing A Property Insurance Claim? Three Things That Decide Your Payout",
+   "q": "Section \"2. Xactimate: The Software Behind Your Estimate\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "b1da907bc77",
+   "deck": "blog-decisions",
+   "ctx": "Lien Waivers Explained",
+   "q": "Section \"Conditional or Unconditional\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "b9195d0611f",
+   "deck": "blog-decisions",
+   "ctx": "Construction Loans and Draws, Explained for Owners",
+   "q": "Section \"How Draws Work\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "bc5ac778d6d",
+   "deck": "blog-decisions",
+   "ctx": "How to Pick a Builder: Questions to Ask Before You Sign",
+   "q": "Section \"Step 3: Ask Where Their Numbers Come From\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  },
+  {
+   "id": "b04db755cd6",
+   "deck": "blog-decisions",
+   "ctx": "Allowances Explained: Why Your Budget Moves",
+   "q": "Section \"How I Handle Allowances\": keep it as written?",
+   "opts": [
+    "Keep",
+    "Tighten",
+    "Cut"
+   ]
+  }
+ ],
+ "built": "2026-10-15T23:39+07:00"
+}
