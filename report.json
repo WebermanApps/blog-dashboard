@@ -1,8 +1,9 @@
 {
  "agent": "Blog",
  "type": "morning",
- "date": "Wed, Oct 14, 2026",
- "posted_at": "2026-10-14T04:52+07:00",
- "due": "2026-10-14T05:00+07:00",
- "late": false
+ "label": "Morning Report",
+ "date": "Thu, Oct 15, 2026",
+ "posted_at": "2026-10-15T07:24+07:00",
+ "due": "2026-10-15T05:00+07:00",
+ "late": true
 }
