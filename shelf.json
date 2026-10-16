@@ -9,7 +9,8 @@
    "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=topic-picks",
    "total": 20,
    "topic": "topic-picks",
-   "blurb": "Which client topics to write next, and which drafts go first"
+   "blurb": "Which client topics to write next, and which drafts go first",
+   "progress_key": "blog-deck-topic-picks-2026-10-14T19:35+07:00"
   },
   {
    "id": "draft-feedback",
@@ -17,7 +18,8 @@
    "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=draft-feedback",
    "total": 20,
    "topic": "draft-feedback",
-   "blurb": "Keep, tighten or cut sections of the drafts and rewrites"
+   "blurb": "Keep, tighten or cut sections of the drafts and rewrites",
+   "progress_key": "blog-deck-draft-feedback-2026-10-14T19:35+07:00"
   },
   {
    "id": "open-checks",
@@ -25,7 +27,8 @@
    "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=open-checks",
    "total": 20,
    "topic": "open-checks",
-   "blurb": "Quick answers and OKs the drafts are waiting on"
+   "blurb": "Quick answers and OKs the drafts are waiting on",
+   "progress_key": "blog-deck-open-checks-2026-10-14T19:35+07:00"
   },
   {
    "id": "writing-style",
@@ -33,7 +36,8 @@
    "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=writing-style",
    "total": 20,
    "topic": "writing-style",
-   "blurb": "How the posts should read and look"
+   "blurb": "How the posts should read and look",
+   "progress_key": "blog-deck-writing-style-2026-10-14T19:35+07:00"
   },
   {
    "id": "blog-decisions",
@@ -41,7 +45,8 @@
    "url": "https://webermanapps.github.io/blog-dashboard/deck/?d=blog-decisions",
    "total": 20,
    "topic": "blog-decisions",
-   "blurb": "Lead images, voice, photos and draft sections still open"
+   "blurb": "Lead images, voice, photos and draft sections still open",
+   "progress_key": "blog-deck-blog-decisions-2026-10-15T23:39+07:00"
   }
  ]
 }
