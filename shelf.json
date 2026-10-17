@@ -1,6 +1,6 @@
 {
  "agent": "blog",
- "updated": "2026-10-17T08:05:35+07:00",
+ "updated": "2026-10-17T09:55:08+07:00",
  "pinned": [],
  "decks": [
   {
@@ -47,10 +47,61 @@
    "topic": "blog-decisions",
    "blurb": "Lead images, voice, photos and draft sections still open",
    "progress_key": "blog-deck-blog-decisions-2026-10-15T23:39+07:00"
+  },
+  {
+   "id": "blog-from-the-feed-deck",
+   "name": "From The Feed Deck",
+   "url": "https://webermanapps.github.io/style-swipe/blog-from-the-feed-deck-4xztdg/",
+   "total": 10,
+   "topic": "blog",
+   "added": "2026-10-17T09:43:51+07:00",
+   "tag": "From The Feed",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "blog-topics-deck",
+   "name": "Topics Deck",
+   "url": "https://webermanapps.github.io/style-swipe/blog-topics-deck-i42yqn/",
+   "total": 10,
+   "topic": "blog",
+   "added": "2026-10-17T09:44:05+07:00",
+   "tag": "Topics",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "blog-topics-deck-real-bids-post",
+   "name": "Real Bids Post Deck",
+   "url": "https://webermanapps.github.io/style-swipe/blog-topics-deck-real-bids-post-vrzeh1/",
+   "total": 10,
+   "topic": "blog",
+   "added": "2026-10-17T09:44:19+07:00",
+   "tag": "Topics",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "blog-topics-deck-change-orders-post",
+   "name": "Change Orders Post Deck",
+   "url": "https://webermanapps.github.io/style-swipe/blog-topics-deck-change-orders-post-h8cnyb/",
+   "total": 10,
+   "topic": "blog",
+   "added": "2026-10-17T09:44:32+07:00",
+   "tag": "Topics",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "blog-topics-deck-pick-a-builder-post",
+   "name": "Pick A Builder Post Deck",
+   "url": "https://webermanapps.github.io/style-swipe/blog-topics-deck-pick-a-builder-post-lxrf15/",
+   "total": 10,
+   "topic": "blog",
+   "added": "2026-10-17T09:44:46+07:00",
+   "tag": "Topics",
+   "blurb": "10 cards, ready now"
   }
  ],
  "cap": 10,
  "cap_note": "R86 (Max Oct 17 2026 07:50 ICT): every shelf shows up to 10 decks (pinned included), 10 picks per deck; in-progress first, done last (kit deck-shelf.js sort)",
  "held": [],
- "queued": []
+ "queued": [],
+ "done": []
 }
