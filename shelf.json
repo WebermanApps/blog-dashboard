@@ -1,6 +1,6 @@
 {
  "agent": "blog",
- "updated": "2026-10-15T23:39+07:00",
+ "updated": "2026-10-17T08:05:35+07:00",
  "pinned": [],
  "decks": [
   {
@@ -48,5 +48,9 @@
    "blurb": "Lead images, voice, photos and draft sections still open",
    "progress_key": "blog-deck-blog-decisions-2026-10-15T23:39+07:00"
   }
- ]
+ ],
+ "cap": 10,
+ "cap_note": "R86 (Max Oct 17 2026 07:50 ICT): every shelf shows up to 10 decks (pinned included), 10 picks per deck; in-progress first, done last (kit deck-shelf.js sort)",
+ "held": [],
+ "queued": []
 }
